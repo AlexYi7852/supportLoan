@@ -1,0 +1,31 @@
+/* 个人信息 */
+
+.m-info {
+    background-color: #fff;
+}
+
+.m-info .item {
+    padding: 15rpx 0;
+}
+
+.m-info .c-sub {
+    color: #a5a9a6;
+}
+.confirm-input {
+    border:1rpx solid #e4e9e7;
+}
+.item-title{
+  width: 220rpx;
+  display: block !important;
+  float: left;
+  text-align: left
+}
+.modal{
+    margin-top: -50px;
+}
+
+.value{
+  text-align: right;
+  width: 500rpx;
+  float: right
+}

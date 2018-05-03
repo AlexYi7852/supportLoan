@@ -1,0 +1,183 @@
+<wxs src="./index.wxs" module="util" />
+<view class="container f-pdb10">
+  <!-- 申请 -->
+  <view class="m-apply">
+    <!-- 申请状态 登录之后才显示 -->
+    <block wx:if="{{userInfo.token}}">
+      <view class="box-h">
+        <text class="u-title">当前状态：{{userInfo.statusTips || ""}}</text>
+      </view>
+    </block>
+    <view class="box-b">
+      <view class="weui-flex">
+        <view class="weui-flex__item" data-url="../../apply_loan/apply_step3/index" data-txt="暂未开放" bindtap="alertLoanType">
+          <image class="icon icon-apply" src="/images/index/icon_zaixianshenqing@2x.png" />
+          <view>
+            <text>贷款申请</text>
+          </view>
+
+        </view>
+
+        <view class="weui-flex__item" data-url="../../apply_loan/apply_step3/index" data-txt="你还未申请" bindtap="confirmReply">
+          <image class="icon icon-confirm" src="/images/index/icon_huizhiqueren@2x.png" />
+          <view>
+            <text>回执确认</text>
+          </view>
+        </view>
+        <view class="weui-flex__item" data-url="../../apply_loan/apply_step3/index" data-txt="你还未申请" bindtap="continueLoan">
+          <image class="icon icon-extend" src="/images/index/icon_xudaishenqing@2x.png" />
+          <view>
+            <text>续贷申请</text>
+          </view>
+        </view>
+        <block wx:if="{{userInfo.showBusinessLoan}}">
+          <view class="weui-flex__item" bindtap="commercialApply">
+            <image class="icon icon-apply" src="/images/index/icon_shangyezhuxue@2x.png" />
+            <view>
+              <text>商业助学</text>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+  <!-- END 申请 -->
+
+  <!-- 信息 -->
+  <view class="m-info f-mgt10">
+    <view class="title ">
+      <view class="fz-36">
+        国家助学贷款--圆你大学梦
+        <navigator class="f-right" url="../FAQ/index">
+          <view class="icon-question"></view>
+        </navigator>
+      </view>
+      <view>
+        <image class="icon icon-logo" src="/images/index/logo_huaan@2x.png" mode="aspectFit"></image>
+        <text>提供全程贷款风险管理服务</text>
+      </view>
+    </view>
+    <view class="f-mgt15">国家助学贷款是由政府主导，面向家庭经济困难高校学生发放的政策性贷款。贷款资金主要用于学生交纳在校期间的学费与住宿费。</view>
+    <view class="f-mgt15">贷款特点：</view>
+    <view>
+      <view>
+        <text class="mr15">专门面向困难学生</text>大学期间全额贴息</view>
+      <view>
+        <text class="mr15">享受银行基准利率</text>贷款无需任何费用</view>
+      <view>
+        <text class="mr15">毕业后三年只还息</text>还款期限长达13年</view>
+    </view>
+    <view class="f-mgt15">每学年最高额度：</view>
+    <view class="m-limit f-mgt10">
+      <view class="weui-flex">
+        <view class="weui-flex__item">
+          <view class="limit">{{sysInfo.bachelorLimitAmount || "00"}}</view>
+          <view>本/专科生</view>
+        </view>
+        <view class="weui-flex__item">
+          <view class="limit">{{sysInfo.masterLimitAmount || "00"}}</view>
+          <view>硕士生</view>
+        </view>
+        <view class="weui-flex__item">
+          <view class="limit">{{sysInfo.doctorLimitAmount || "00"}}</view>
+          <view>博士生</view>
+        </view>
+      </view>
+    </view>
+    <!-- 生源地 -->
+    <view class="m-badge weui-cell weui-cell-1 f-mgt15">
+      <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+        <image class="icon-school" src="/images/index/icon_shengyuandi@2x.png" mode="aspectFit"></image>
+      </view>
+      <view class="weui-cell__bd">
+        <view>生源地</view>
+        <view class="desc">学生向入学前户籍所在地资助中心申请的助学贷款。</view>
+        <view class="weui-cell weui-cell-1">
+          <view class="weui-cell__hd">
+            当前开放：
+          </view>
+          <view class="weui-cell__bd">
+            <block wx:for="{{sProd}}" wx:for-item="item" wx:key="index1">
+              <view>
+                <text class="province">{{util.filter(item,0) || " "}}</text>
+                <text>{{util.filter(item,1)}}</text>
+                <text class="bank">{{util.filter(item,2) || " "}}</text>
+              </view>
+            </block>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- END 生源地 -->
+
+    <!-- 校园地 -->
+    <view class="m-badge weui-cell weui-cell-1 f-mgt15">
+      <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+        <image class="icon-school" src="/images/index/icon_xiaoyuandi@2x.png" mode="aspectFit"></image>
+      </view>
+      <view class="weui-cell__bd">
+        <view>校园地</view>
+        <view class="desc">学生向就读高校申请的助学贷款。</view>
+        <view class="weui-cell weui-cell-1">
+          <view class="weui-cell__hd">
+            当前开放：
+          </view>
+          <view class="weui-cell__bd">
+            <block wx:for="{{jProd}}" wx:for-item="item" wx:key="index2">
+              <view>
+                <text class="province">{{util.filter(item,0) || ""}}</text>
+                <text>{{util.filter(item,1)}}</text>
+                <text class="bank">{{util.filter(item,2) || ""}}</text>
+              </view>
+            </block>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- END 校园地 -->
+  </view>
+  <!-- END 信息 -->
+
+  <!-- 新闻公告 -->
+  <block wx:if="{{postRecentlyList.length!=0}}">
+    <navigator url="../announce/index">
+      <view class="m-announce weui-cell weui-cell_access weui-cell-2 f-mgt15">
+        <view class="weui-cell__hd f-mgr10">
+          <image class="icon icon-announce" src="/images/index/icon_xinwengonggao@2x.png"></image>
+        </view>
+        <view class="weui-cell__bd">
+          <view wx:for="{{postRecentlyList}}" wx:for-item="item" wx:key="index0">{{item.title}}</view>
+        </view>
+        <!-- <view class="weui-cell__ft weui-cell__ft_in-access">
+          <image class="icon-dot" src="/images/index/yuan@2x.png"></image> 
+        </view> -->
+      </view>
+    </navigator>
+  </block>
+  <!-- END 新闻公告 -->
+
+
+  <!-- 弹框去贷款 -->
+  <block wx:if="{{alert}}">
+    <view class="loanType">
+      <view class="loan-content">
+        <view class="close-btn" bindtap="alertLoanType"></view>
+        <view class="loan-content-title">请选择贷款类型</view>
+        <view class="list">生源地开放地区：
+          <block wx:for="{{sProd}}" wx:for-item="item" wx:key="key1">
+            {{util.filter(item,0) || " "}}
+          </block>
+        </view>
+        <view class="list">校园地开放地区：
+          <block wx:for="{{jProd}}" wx:for-item="item" wx:key="key2">
+            {{util.filter(item,0) || " "}}
+          </block>
+        </view>
+        <view class="loan-btn">
+          <view data-loantype="S" bindtap="linkLoan">生源地贷款</view>
+          <view class="borderLeft" data-loantype="J" bindtap="linkLoan">校园地贷款</view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

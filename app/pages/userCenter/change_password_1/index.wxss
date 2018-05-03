@@ -1,0 +1,27 @@
+.m-form .label {
+    width: 130rpx;
+    text-align: justify;
+}
+
+.m-form .content {
+    background-color: #fff;
+    padding: 20rpx 16rpx;
+    position: relative;
+}
+
+.m-form .content .input-code {
+    padding-right: 220rpx;
+}
+
+.m-form .content .g-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 218rpx;
+    background-color: #07944a;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

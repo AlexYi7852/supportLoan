@@ -1,0 +1,27 @@
+<view class='container'>
+  <view>
+
+    <view class="icon-sm">
+
+    </view>
+  </view>
+
+  <view class='tips'>
+    请使用
+    <text>前置摄像头</text>, 录制
+    <text>5秒</text>视频
+    <view>
+      录制时请
+      <text>匀速朗读</text>一遍下方数字
+    </view>
+    <view>
+      并保持正面脸部始终在方框内
+    </view>
+  </view>
+  <view class='random-number'>
+    {{random_number}}
+  </view>
+  <view class="f-tc" style="margin-top:140rpx;" bindtap='nextStep'>
+    <view class="u-btn u-btn-primary" bindtap="regist">我已准备好、开始录像</view>
+  </view>
+</view>

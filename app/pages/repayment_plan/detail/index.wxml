@@ -1,0 +1,61 @@
+<view class="container">
+  <!-- header -->
+  <view class="m-header weui-cell weui-cell-2">
+    <view class="triangle triangle-l"></view>
+    <view class="" bindtap="open">
+      {{currentYear}}年
+    </view>
+    <view class="triangle triangle-r"></view>
+  </view>
+
+  <!-- table -->
+  <view class="m-table">
+    <view class="header">
+      <view class="item f-mgr20">
+        <view class="square square-1 f-mgr6"></view>
+        <text>应还</text>
+      </view>
+      <view class="item">
+        <view class="square square-2 f-mgr6"></view>
+        <text>实还</text>
+      </view>
+    </view>
+
+    <view class="content">
+      <view class="weui-cell weui-cell-2 header">
+        <view class="weui-cell__bd item-key">还款日</view>
+        <view class="weui-cell__bd item-key">本金（¥）</view>
+        <view class="weui-cell__bd item-key">利息（¥）</view>
+        <view class="weui-cell__bd item-key">罚息（¥）</view>
+      </view>
+
+      <view wx:for="{{currentMonthsData}}" wx:for-index="index" wx:for-item="item" wx:key="*this">
+
+        <view class="weui-cell weui-cell-1 item">
+          <view class="weui-cell__bd item-value">
+            <view>{{item.payDay}}</view>
+            <view class="{{item.ifOverdue ? 'c-danger' : 'c-primary'}}">{{item.actualDay}}</view>
+          </view>
+          <view class="weui-cell__bd item-value">
+            <view>{{item.payAmount}}</view>
+            <view class="{{item.ifOverdue ? 'c-danger' : 'c-primary'}}">{{item.actualAmount}}</view>
+          </view>
+          <view class="weui-cell__bd item-value">
+            <view>{{item.payIrt}}</view>
+            <view class="{{item.ifOverdue ? 'c-danger' : 'c-primary'}}">{{item.actualIrt}}</view>
+          </view>
+          <view class="weui-cell__bd item-value" style="margin-right:25rpx;">
+            <view>{{item.payTogeIrt}}</view>
+            <view class="{{item.ifOverdue ? 'c-danger' : 'c-primary'}}">{{item.actualTogeIrt}}</view>
+          </view>
+        </view>
+
+        <view style='height:2rpx;width:100%;background-color:rgb(239,241,241);'></view>
+
+      </view>
+
+    </view>
+
+
+  </view>
+</view>

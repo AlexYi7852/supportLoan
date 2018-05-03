@@ -1,0 +1,7 @@
+<view class="container">
+  <view style="padding:100rpx 60rpx 60rpx;" class="s1 f-tc">
+    <image style="width:240rpx;height:160rpx;" src="/images/reply_confirm/icon_shenhezhong@2x.png"></image>
+    <view>请等待工作人员确认</view>
+    <view style="font-size:13px;" class="f-mgt30">工作人员确认后需要2~3个工作日更新状态</view>
+  </view>
+</view>

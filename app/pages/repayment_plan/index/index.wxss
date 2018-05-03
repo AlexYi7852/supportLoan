@@ -1,0 +1,47 @@
+/* 还款记录 */
+.m-record{
+    background-color: #fff;
+    padding: 0 30rpx;
+}
+.m-record .u-title{
+    padding: 30rpx 0;
+}
+.m-record .this-term{
+    background-color: #e7fbf1;
+    padding: 40rpx 20rpx;
+}
+.m-record .this-term .ft{
+    text-align: right;
+}
+
+/* 我的贷款 */
+.m-mine{
+    background-color: #fff;
+    padding: 30rpx 20rpx;
+}
+.m-mine .title{
+    font-size: 15px;
+}
+
+/* canvas */
+#piechart{
+    margin: 0 auto;
+}
+
+
+.font_text{
+  font-size: 30rpx;
+}
+
+.m_t{
+  margin-top: 20rpx;
+}
+
+.box {
+  background-color: #fff;
+  padding:20rpx 0px 20rpx 0px;
+  display: flex;
+  font-size: 32rpx;
+  justify-content: center;
+  align-items: center;
+}

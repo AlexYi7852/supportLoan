@@ -1,0 +1,117 @@
+<wxs src="../../../../utils/common.wxs" module="util" />
+<view class="container">
+  <view class="m-content g-mn">
+    <view class="f-mgb10">请确认联系人信息</view>
+    <view>
+      <image class="icon-iccard f-mgr6" src="/images/my_loan/icon_fumujijianhurenxinxi@2x.png"></image>
+      <text>父母/亲属</text>
+    </view>
+    <view class="m-form m-form-1">
+      <view class="m-select m-select-1 weui-cell weui-cell-2 f-mgt15">
+        <view class="weui-cell__hd label">
+          姓名：
+        </view>
+        <view class="weui-cell__bd content-wrap">
+          <view class="weui-cell weui-cell-2 content">
+            <input placeholder="请输入" value="{{replayData.guarderName}}" bindinput="guarderNameInput" />
+          </view>
+        </view>
+      </view>
+      <view class="m-select m-select-1 weui-cell weui-cell-2 f-mgt15">
+        <view class="weui-cell__hd label">
+         
+
+            <view>身份证</view>
+          <view> 号码：</view>
+        </view>
+        <view class="weui-cell__bd content-wrap">
+          <view class="weui-cell weui-cell-2 content">
+            <input placeholder="请输入" value="{{replayData.guarderCertCode}}" bindinput="guarderCertCodeInput" type="idcard" />
+          </view>
+        </view>
+      </view>
+      <view class="m-select m-select-1 weui-cell weui-cell-2 f-mgt15">
+        <view class="weui-cell__hd label">
+          <view>与申请人</view>
+          <view>关系：</view>
+        </view>
+        <view class="weui-cell__bd content weui-cell weui-cell-2">
+          <view class="weui-cell__bd">
+            <picker bindchange="bindGuarderRelation" value="index" range="{{relationshipData1}}" range-key="{{'label'}}">
+              <view class="picker">
+                {{relationshipData1[index]['label']}}
+              </view>
+            </picker>
+          </view>
+          <view>
+            <image class="icon-down" src="/images/apply_loan/icon_xiala@2x.png"></image>
+          </view>
+        </view>
+      </view>
+      <view class="m-select m-select-1 weui-cell weui-cell-2 f-mgt15">
+        <view class="weui-cell__hd label">
+          手机号：
+        </view>
+        <view class="weui-cell__bd content-wrap">
+          <view class="weui-cell weui-cell-2 content">
+            <input placeholder="请输入" type="number" maxlength="11" value="{{replayData.guarderMobile}}" bindinput="guarderMobileInput"
+            />
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="m-content g-mn f-mgt10">
+    <view>
+      <image class="icon-people f-mgr6" src="/images/my_loan/icon_jinjixianxiren@2x.png"></image>
+      <text>紧急联系人</text>
+    </view>
+    <view class="m-form m-form-1">
+      <view class="m-select m-select-1 weui-cell weui-cell-2 f-mgt15">
+        <view class="weui-cell__hd label">
+          姓名：
+        </view>
+        <view class="weui-cell__bd content-wrap">
+          <view class="weui-cell weui-cell-2 content">
+            <input placeholder="请输入" maxlength="20" value="{{replayData.urgentName}}" bindinput="urgentNameInput" />
+          </view>
+        </view>
+      </view>
+      <view class="m-select m-select-1 weui-cell weui-cell-2 f-mgt15">
+        <view class="weui-cell__hd label">
+          <view>与申请人</view>
+          <view>关系：</view>
+        </view>
+        <view class="weui-cell__bd content weui-cell weui-cell-2">
+          <view class="weui-cell__bd">
+            <picker bindchange="urgentRelation" value="index1" range="{{relationshipData2}}" range-key="{{'label'}}">
+              <view class="picker">
+                {{relationshipData2[index1]['label']}}
+              </view>
+            </picker>
+          </view>
+          <view>
+            <image class="icon-down" src="/images/apply_loan/icon_xiala@2x.png"></image>
+          </view>
+        </view>
+      </view>
+      <view class="m-select m-select-1 weui-cell weui-cell-2 f-mgt15">
+        <view class="weui-cell__hd label">
+          手机号：
+        </view>
+        <view class="weui-cell__bd content-wrap">
+          <view class="weui-cell weui-cell-2 content">
+            <input placeholder="请输入" type="number" maxlength="11" bindinput="urgentMobileInput" value="{{replayData.urgentMobile}}" />
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <!-- 按钮 -->
+  <view class="f-tc" style="margin-top:60rpx;" bindtap="confirmRepayMsg">
+    <view class="u-btn u-btn-primary">下一步</view>
+  </view>
+</view>

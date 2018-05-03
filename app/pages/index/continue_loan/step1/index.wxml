@@ -1,0 +1,84 @@
+<view class="container">
+  <!-- 信息 -->
+  <view class="m-info s1 g-mn">
+    <view class="weui-cell weui-cell-2">
+      <view class="title weui-cell__bd">
+        {{loanData.prov}} {{loanData.loanType}}
+      </view>
+      <view>
+        <!-- <image class="f-mgr6" style="width:40rpx;height:26rpx;" src="/images/index/yinhanglogoda-smal@2x.png"></image> -->
+        {{loanData.bankname}}
+      </view>
+    </view>
+    <view class="content weui-cell weui-cell-2 f-mgt10">
+      <view class="weui-cell__bd">
+        每期¥5000，共{{loanData.loanYear}}期
+      </view>
+      <view>
+        合计：¥{{loanData.loanAmount}}
+      </view>
+    </view>
+    <view class="subtitle f-mgt20">开放续贷：</view>
+    <view class="content weui-cell weui-cell-2 f-mgt10">
+      <view>
+        第{{loanData.currTimes}}期
+      </view>
+      <view class="weui-cell__bd f-tc">
+        本期金额： ¥{{loanData.loanPerAmount}}
+      </view>
+      <view>
+        剩余{{loanData.hasTimes}}期
+      </view>
+    </view>
+  </view>
+
+
+  <!-- 回执确认 -->
+  <view class="m-upload g-mn f-mgt10">
+    <view class="c-danger">
+      请于{{receiptData.time}}前完成回执确认
+    </view>
+
+    <view class="item f-mgt20">
+      <view class="weui-cell weui-cell-2">
+        <view class="weui-cell__bd">
+          第一步：打印高校回执模板
+        </view>
+        <view>
+          <view class="c-secondary" bindtap="openDocument">
+            <text class="f-mgr6">查看模板</text>
+            <image class="icon-right" src="/images/index/iconfont-youjiantou2@2x.png"></image>
+          </view>
+        </view>
+      </view>
+      <view class="print-box f-mgt10">
+        <input type="text" class="email-ipt" bindchange="emailInput" value="{{receiptData.email}}" />
+        <button class="email-btn" bindtap="sendUploadEmail">发送至邮箱</button>
+      </view>
+    </view>
+
+    <view class="item f-mgt20">
+      <view>第二步：联系学校盖章</view>
+      <view class="f-mgt10 f-tc">
+        <image style="width:206rpx;height:116rpx;" src="/images/reply_confirm/icon_lianxixuexiaogaizhang@2x.png"></image>
+      </view>
+    </view>
+
+    <view class="item f-mgt20">
+      <view>第三步：拍照回执上传</view>
+      <view class="f-mgt10">
+        <view class="upload img-bg">
+          <image mode="aspectFill" class="image result" data-url="{{url}}" bindtap="uploadImage" src="{{url}}"></image>
+          <image wx:if="{{url}}" class="icon-delete" data-url="{{url}}" bindtap="deleteImage" src="/images/apply_loan/icon_shanchu@2x.png"></image>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+
+  <!-- 按钮 -->
+  <view class="f-tc" style="margin-top:120rpx;margin-bottom:150rpx;" bindtap="interfaceApiCallBack">
+    <view class="u-btn u-btn-primary">确认上传</view>
+  </view>
+</view>

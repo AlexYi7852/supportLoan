@@ -1,0 +1,106 @@
+<view class="container">
+    <!-- 个人信息标题 -->
+    <view class="m-title  weui-cell weui-cell-2 icon-apply">
+        <view class="weui-cell__bd ">
+            个人信息
+        </view>
+    </view>
+    <!-- END 个人信息标题 -->
+
+    <!-- 个人信息内容 -->
+    <view class="m-content g-mn">
+        <view class="item weui-cell weui-cell-2">
+            <view class="weui-cell__bd">姓名</view>
+            <view>{{userInfo.userName}}</view>
+        </view>
+        <view class="item weui-cell weui-cell-2">
+            <view class="weui-cell__bd">身份证号</view>
+            <view>{{userInfo.certCode}}</view>
+        </view>
+        <view class="item weui-cell weui-cell-2">
+            <view class="item-title">户籍地址</view>
+            <view class='value'>
+                {{userInfo.cPermanentAddr || ""}}
+            </view>
+        </view>
+        <view class="item weui-cell weui-cell-2">
+            <view class="weui-cell__bd">手机号</view>
+            <view>{{userInfo.mobile}}</view>
+        </view>
+        <!-- 选择贷款类型为高考所在地时显示 -->
+        <view class="m-form f-mgt15">
+            <!--  -->
+            <block wx:if="{{loanLatestData.showExam==true}}">
+                <view class="m-select m-select-1 weui-cell weui-cell-2" bindtap="openGaoKaoAddressMenu">
+                    <view class="weui-cell__hd label">
+                        <view>高考</view>
+                        <view>所在地：</view>
+                    </view>
+                    <view class="weui-cell__bd content weui-cell weui-cell-2">
+                        <view class="weui-cell__bd">
+                            <gk-city-html addressMenuIsShow="{{addressMenuIsShow}}" proJson="{{gaoKaoProList}}" cityCodes="{{gkCityCodes}}" binddetail="gkBindtap"></gk-city-html>
+                        </view>
+                        <view>
+                            <image class="icon-down" src="/images/apply_loan/icon_xiala@2x.png"></image>
+                        </view>
+                    </view>
+                </view>
+            </block>
+            <view class="m-select m-select-1 weui-cell weui-cell-1 f-mgt15">
+                <view class="weui-cell__hd label">
+                    家庭住址：
+                </view>
+                <view class="weui-cell__bd content-wrap">
+                    <view class="weui-cell weui-cell-2 content">
+                        <view class="weui-cell__bd">
+                            <city-html addressMenuIsShow="{{addressMenuIsShow}}" cityCodes="{{cityCodes}}" binddetail="bindtap"></city-html>
+
+                        </view>
+                        <view>
+                            <image class="icon-down" src="/images/apply_loan/icon_xiala@2x.png"></image>
+                        </view>
+                    </view>
+                    <view class="weui-cell weui-cell-2 content f-mgt15">
+                        <input placeholder="请输入详细地址" value="{{applyData.houseAddr}}" type="text" bindinput="houseAddrInput" />
+                    </view>
+                </view>
+            </view>
+            <view class="m-select m-select-1 weui-cell weui-cell-2 f-mgt15">
+                <view class="weui-cell__hd label">
+                    电子邮箱：
+                </view>
+                <view class="weui-cell__bd content-wrap">
+                    <view class="weui-cell weui-cell-2 content">
+                        <input placeholder="请输入电子邮箱" type="text" bindinput="emailInput" maxlength="40" value="{{applyData.email}}" />
+                    </view>
+                </view>
+            </view>
+            <view class="m-select m-select-1 weui-cell weui-cell-2 f-mgt15">
+                <view class="weui-cell__hd label">
+                    QQ号：
+                </view>
+                <view class="weui-cell__bd content-wrap">
+                    <view class="weui-cell weui-cell-2 content">
+                        <input placeholder="请输入常用QQ号" type="number" bindinput="QQInput" maxlength="12" value="{{applyData.qq}}" />
+                    </view>
+                </view>
+            </view>
+            <view class="m-select m-select-1 weui-cell weui-cell-2 f-mgt15">
+                <view class="weui-cell__hd label">
+                    微信：
+                </view>
+                <view class="weui-cell__bd content-wrap">
+                    <view class="weui-cell weui-cell-2 content">
+                        <input placeholder="选填" bindinput="wechatInput" maxlength="20" type="text" value="{{applyData.wechat}}" />
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- END 个人信息内容 -->
+
+    <!-- 按钮 -->
+    <view class="f-tc" style="margin-top:120rpx;margin-bottom:150rpx;" bindtap="nextStep">
+        <view class="u-btn u-btn-primary">下一步</view>
+    </view>
+</view>

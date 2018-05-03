@@ -1,0 +1,5 @@
+<import src="../../component/wxParse/wxParse.wxml" />
+
+<view class="wxParse">
+    <template is="wxParse" data="{{wxParseData:accountProtocol.nodes}}" />
+</view>

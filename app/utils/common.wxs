@@ -1,0 +1,83 @@
+var relationshipData = [
+  {
+    label: '父',
+    value: '601010'
+  },
+  {
+    label: '母',
+    value: '601011'
+  },
+  {
+    label: '兄 (姐)',
+    value: '601012'
+  },
+  {
+    label: '同学',
+    value: '601018'
+  },
+  {
+    label: '朋友',
+    value: '601021'
+  },
+  {
+    label: '同乡',
+    value: '601019'
+  },
+  {
+    label: '其他亲属',
+    value: '601015'
+  },
+
+  {
+    label: '其他监护人',
+    value: '601015'
+  }
+]
+
+//获取关系名称
+function getRelationShip(value) {
+  var str = ''
+  for (var i = 0; i <= 7; i++) {
+    if (value == relationshipData[i]['value']) {
+      return relationshipData[i]['label']
+    }
+  }
+}
+
+function delHtmlTag(str) {
+  var reg = getRegExp('/<[^>]+>/g')
+  return str.replace(reg, '') //去掉所有的html标记
+}
+
+//保留两位小数
+var filters = {
+  toFix: function(value) {
+    return value.toFixed(2) //此处2为保留两位小数
+  }
+}
+
+var icon = function(str) {
+  switch (str) {
+    case '哈尔滨银行':
+    case '哈行银行':
+      return 'HRBANK'
+      break
+    case '邮政储蓄银行':
+    case '邮储银行':
+      return 'PSBC'
+      break
+    case '建设银行':
+    case '中国建设银行':
+      break
+      return 'CCB'
+    default:
+      break
+  }
+}
+
+module.exports = {
+  getRelationShip: getRelationShip,
+  delHtmlTag: delHtmlTag,
+  icon: icon,
+  toFix: filters.toFix
+}

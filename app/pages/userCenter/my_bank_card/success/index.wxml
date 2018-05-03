@@ -1,0 +1,10 @@
+<view class="container f-tc">
+  <image style="margin-top:100rpx;" class="icon-face" src="/images/face_recognize/icon-shibietongguo@2x.png"></image>
+
+
+  <view style="margin-top:100rpx;">变更审核已提交、请耐心等待！</view>
+  <!-- 按钮 -->
+  <view class="f-tc" style="margin-top:70rpx;margin-bottom:150rpx;">
+    <view class="u-btn u-btn-primary" bindtap="backHome">返回首页</view>
+  </view>
+</view>

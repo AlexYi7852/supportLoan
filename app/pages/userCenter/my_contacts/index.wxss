@@ -1,0 +1,81 @@
+/* 贷款类型选择 */
+
+.m-select {}
+
+.m-select .label {
+    min-width: 140rpx;
+}
+
+.m-select .content-wrap {
+    width: 510rpx;
+    height: 92rpx;
+}
+
+.m-select .content {
+    background-color: #fff;
+    padding: 20rpx 16rpx;
+    width: 510rpx;
+}
+
+.m-select-1 .content {
+    background-color: #f3f6f4;
+    width: 100%;
+    height: 88rpx;
+}
+
+.m-select-2 .content {
+    width: 100%;
+    padding: 20rpx 0;
+}
+
+
+/* tab标题 */
+
+.m-title {
+    background-color: #bbb;
+    color: #fff;
+    font-size: 17px;
+    padding: 30rpx 46rpx;
+}
+
+.m-title.z-active {
+    background-color: #07944a;
+}
+
+
+/* tab内容 */
+
+.m-content {
+    background-color: #fff;
+}
+
+.m-content .item {
+    padding: 15rpx 0;
+}
+
+.m-content .c-sub {
+    color: #a5a9a6;
+}
+.m-content-1 .content input{
+    color: #a5a9a6;
+}
+
+
+/* 表单 */
+
+.m-form {
+    border-top: 1px solid #e4e9e7;
+    padding-top: 40rpx;
+}
+
+.m-form-1 {
+    border-top: none;
+    padding-top: 0;
+}
+
+.m-form-2 {
+    border-top: none;
+    padding-top: 0;
+    padding-bottom: 30rpx;
+    border-bottom: 1px solid #e4e9e7;
+}

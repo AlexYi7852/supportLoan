@@ -1,0 +1,23 @@
+<wxs src="../../../utils/common.wxs" module="util" />
+<view class="container g-mn">
+  <!-- 公告 -->
+  <block wx:for="{{postRecentlyList}}" wx:for-item="item">
+  <view class="m-announce">
+    <view class="title">{{item.title}}</view>
+    <view class="time">{{item.time}}</view>
+    <view class="desc">
+      {{filter.delHtmlTag(item.content)}}
+    </view>
+    <view class="weui-cell weui-cell-1">
+      <view class="weui-cell__bd"></view>
+      <view class="more">
+        <navigator url="../announce_detail/index?id={{item.id}}" >
+           查看更多
+          <image class="icon-right" src="/images/index/iconfont-youjiantou2@2x.png"></image>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  </block>
+  <!-- END 公告 -->
+</view>

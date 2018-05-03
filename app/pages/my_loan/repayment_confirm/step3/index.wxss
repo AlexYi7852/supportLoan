@@ -1,0 +1,152 @@
+/* 贷款类型选择 */
+
+.m-select {}
+
+.m-select .label {
+    min-width: 140rpx;
+}
+
+.m-select .content-wrap {
+    width: 510rpx;
+}
+
+.m-select .content {
+    background-color: #fff;
+    padding: 20rpx 16rpx;
+    width: 510rpx;
+}
+
+.m-select-1 .content {
+    background-color: #f3f6f4;
+    width: 100%;
+}
+
+.m-select-2 .content {
+    width: 100%;
+    padding: 20rpx 0;
+}
+
+
+/* tab标题 */
+
+.m-title {
+    background-color: #bbb;
+    color: #fff;
+    font-size: 17px;
+    padding: 30rpx 46rpx;
+}
+
+.m-title.z-active {
+    background-color: #07944a;
+}
+
+
+/* tab内容 */
+
+.m-content {
+    background-color: #fff;
+}
+.m-content .header{
+    border-bottom: 1px solid #e4e9e7;
+    padding-bottom: 20rpx;
+}
+.m-content .item {
+    padding: 15rpx 0;
+}
+
+.m-content .c-sub {
+    color: #a5a9a6;
+}
+
+
+/* 表单 */
+
+.m-form {
+    border-top: 1px solid #e4e9e7;
+    padding-top: 40rpx;
+}
+
+.m-form-1 {
+    border-top: none;
+    padding-top: 0;
+}
+
+.m-form-2 {
+    border-top: none;
+    padding-top: 0;
+    padding-bottom: 30rpx;
+    border-bottom: 1px solid #e4e9e7;
+}
+
+/* 审核反馈 */
+.m-feedback{
+    background-color: #fff;
+}
+.m-feedback .content {
+    background-color: #e7fbf1;
+}
+.m-feedback .content .item{
+    padding: 15rpx 20rpx;
+}
+.m-feedback .header {
+    border-bottom: 1px solid #e4e9e7;
+}
+
+.m-feedback .footer {
+    border-top: 1px solid #e4e9e7;
+}
+
+.m-feedback .header-1 {
+    border-bottom: none;
+}
+
+.m-feedback .footer-1 {
+    border: none;
+}
+
+/* 签署弹层 */
+
+.m-pop {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(66, 66, 66, .6);
+    padding: 30rpx;
+}
+
+.m-pop .content-wrap {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.m-pop .header {
+    position: relative;
+    height: 88rpx;
+    line-height: 88rpx;
+    text-align: center;
+    background-color: #07944a;
+    color: #fff;
+}
+
+.m-pop .header .g-icon-l {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 88rpx;
+    text-align: center;
+}
+
+.m-pop .content {
+    background-color: #fff;
+}
+
+.m-pop .content1 {
+    padding: 30rpx;
+    background-color: #ecfaf3;
+    max-height: 600rpx;
+    overflow-y: auto;
+}

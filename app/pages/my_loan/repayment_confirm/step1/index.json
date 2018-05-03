@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "还款确认",
+  "usingComponents": {
+    "city-html": "/component/city/city"
+  }
+}

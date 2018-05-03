@@ -1,0 +1,21 @@
+/* 公告 */
+.m-announce{
+    background-color: #fff;
+    padding: 60rpx;
+}
+.m-announce:nth-child(n+2){
+    margin-top: 20rpx;
+}
+.m-announce .title{
+    font-size: 18px;
+}
+.m-announce .time{
+    color: #989e9a;
+    font-size: 12px;
+}
+.m-announce .desc{
+    color: #343b36;
+}
+.m-announce .more{
+    color: #4193d2;
+}

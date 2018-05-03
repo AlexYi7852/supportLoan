@@ -1,0 +1,7 @@
+<view class="container f-tc">
+  <image style="width:184rpx;height:178rpx;margin-top:140rpx;" src="/images/my_loan/icon_yueyeuchneggong@2x.png" bindtap='comfirmBtn'></image>
+  <view class="f-mgt20">预约成功</view>
+  <view class="desc f-mgt30">
+    <view>银行将从您的账户(**88)中扣除人民币10000.00元，请保证余额充足。</view>
+  </view>
+</view>

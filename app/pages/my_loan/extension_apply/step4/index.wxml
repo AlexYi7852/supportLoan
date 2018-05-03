@@ -1,0 +1,10 @@
+<view class="container f-tc" style="padding-top:170rpx;">
+  <view>
+    <image style="width:130rpx;height:138rpx;" src="/images/extension_repayment/icon_shenhetongguo@2x.png"></image>
+  </view>
+  <view class="f-mgt10">审核通过</view>
+  <view class="c-secondary f-mgt20" bindtap="linkUrl">
+    <text>查看新的还款计划</text>
+    <image class="icon-right" src="/images/index/iconfont-youjiantou2@2x.png"></image>
+  </view>
+</view>

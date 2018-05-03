@@ -1,0 +1,46 @@
+/* 头像 */
+
+.m-avatar {
+    position: relative;
+    text-align: center;
+    background-color: #fff;
+    padding: 60rpx;
+}
+
+.m-avatar .access {
+    font-size: 25px;
+}
+.m-avatar .title{
+    font-size: 30px;
+}
+.m-avatar .school {
+    font-size: 16px;
+}
+.m-avatar .g-icon{
+    position: absolute;
+    top: 40rpx;
+    right: 30rpx;
+}
+.contact-btn{
+    background: #fff;
+    text-align: left;
+    padding-left: 0;
+    border: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+button[plain]{
+    border: 1px solid #FFF
+}
+button[plain]:active,
+button[plain]::after,
+button[plain]:link{
+    border: 1px solid #FFF;
+    color: #333 !important
+}
+
+.m-badge view{
+  font-size: 28rpx !important;
+  color: #333 !important
+}

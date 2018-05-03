@@ -1,0 +1,20 @@
+<view class="container g-mn s1">
+  <view class="weui-cell weui-cell-2">
+    <view class="weui-cell__bd">
+      <image style="width:296rpx;height:68rpx;" src="/images/user_center/logo-ppt2-b1@2x.png"></image>
+    </view>
+    <view>
+      <text class="f-mgr6 c-secondary" bindtap="linkWebSite">访问官网</text>
+      <image class="icon-right1" src="/images/apply_loan/iconfont_lanyoujiantou@2x.png"></image>
+    </view>
+  </view>
+  <view class="m-article f-mgt10">
+    <view class="para"></view>
+    <view class="para">
+       华安财产保险股份有限公司是经中国人民银行批准，于1996年10月18日正式创立的一家专业财产保险公司，总部设于深圳，注册资本21亿元人民币，主要经营各种财产险、责任险、信用保证险、农业险、意外伤害险、短期健康险和再保险业务。经过二十一年的发展，华安保险已经成长成为资产质量优良，
+       员工队伍蓬勃，创新能力突出的全国性金融机构。  </view>
+    <view class="para">
+       为帮助经济困难家庭学生顺利完成大学学业，针对国家助学贷款发放难的困境，2006年，华安保险秉承“责任、专业、奋进”的企业文化，推出华安国家助学贷款保险（简称“学贷险”），截止2018年1月份，我司学贷险业务累计承保贷款本金66.41亿元，已承保大学生54.20万人。
+    </view>
+  </view>
+</view>

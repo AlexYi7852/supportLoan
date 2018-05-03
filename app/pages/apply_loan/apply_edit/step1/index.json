@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "填写申请资料",
+  "usingComponents": {
+    "city-html": "/component/city/city",
+    "gk-city-html": "/component/city/city"
+  }
+}

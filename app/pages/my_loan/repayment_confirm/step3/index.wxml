@@ -1,0 +1,51 @@
+<view class="container">
+  <view class="m-content g-mn">
+    <view class="f-mgb20">请确认还款信息</view>
+    <view>
+      <view class="header">
+        <image class="icon-record f-mgr6" src="/images/my_loan/icon_daikuanjilu@2x.png"></image>
+        <text>贷款记录</text>
+      </view>
+      <view class="weui-cell weui-cell-2 g-mn f-mgt10">
+        <view class="weui-cell__bd">{{replayData.loan[0].prov}} {{replayData.loan[0].loanType}}</view>
+        <view class="c-dark" style="font-size:13px;">{{replayData.loan[0].period}}</view>
+      </view>
+      <view class="m-feedback">
+        <view class="weui-cell weui-cell-4 header header-1 g-mn">
+          <view class="weui-cell__bd">
+            放款时间
+          </view>
+          <view>
+            放款金额
+          </view>
+        </view>
+        <view class="content">
+          <block wx:for="{{replayData.loan[0].receipt}}" wx:for-item="item" wx:key="">
+            <view class="weui-cell weui-cell-4 item">
+              <view class="weui-cell__bd">
+                {{item.perTime || ''}}
+              </view>
+              <view>
+                {{item.perAmount}}
+              </view>
+            </view>
+          </block>
+        </view>
+        <view class="weui-cell weui-cell-4 footer footer-1 g-mn">
+          <view class="weui-cell__bd c-dark">
+            共{{replayData.loan[0].loanYear}}期
+          </view>
+          <view>
+            总计：
+            <text class="c-primary">¥{{replayData.loan[0].loanAmount}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 按钮 -->
+  <view class="f-tc" style="margin-top:60rpx;" bindtap="nexStep">
+    <view class="u-btn u-btn-primary">确认</view>
+  </view>
+</view>

@@ -1,0 +1,39 @@
+<view class="container f-tc">
+
+  <!-- IF 已经属于平台用户 -->
+  <view class="f-mgt30">
+    <view>您已属于加上助学平台助学用户，</view>
+    <view>请前往加上助学平台提交申请！</view>
+  </view>
+
+  <!-- IF 成功提交申请 -->
+  <!-- <view class="f-mgt30">
+    <view class="m-info weui-cell weui-cell-2 f-mgt20">
+      <view class="weui-cell__hd">
+        您的加上助学账号为：
+      </view>
+      <view class="weui-cell__bd">
+        xxxxxx
+      </view>
+    </view>
+    <view class="m-info weui-cell weui-cell-2">
+      <view class="weui-cell__hd">
+        初始密码：
+      </view>
+      <view class="weui-cell__bd">
+        xxxxxx
+      </view>
+    </view>
+  </view> -->
+
+  <view class="f-mgt20">
+    <image style="width:382rpx;" mode="widthFix" src="/images/commercial_loan_apply/qrcode@2x.png"></image>
+  </view>
+
+  <!-- IF 成功提交申请 -->
+  <view>
+    <view class="f-tc" style="margin-top:80rpx;" bindtap="backHome">
+      <view class="u-btn u-btn-primary">返回首页</view>
+    </view>
+  </view>
+</view>

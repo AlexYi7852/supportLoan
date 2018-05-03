@@ -1,0 +1,179 @@
+<wxs src="../../../utils/common.wxs" module="util" />
+<view class="container">
+
+  <!-- 项目 -->
+  <block wx:if="{{isLogin==true}}">
+    <view class="m-nav f-tc">
+      <view class="box-b">
+        <view class="weui-flex">
+          <view class="item weui-flex__item" bindtap="repayMent">
+            <view class="image-wrap">
+              <image style="width:60rpx;height:48rpx;" src="/images/index/icon_huankuanqueren@2x.png" />
+            </view>
+            <view style="margin-top:14rpx;">
+              <text>还款确认</text>
+            </view>
+          </view>
+          <view class="item weui-flex__item" bindtap="extensionApply">
+            <view class="image-wrap">
+              <image style="width:60rpx;height:60rpx;" src="/images/index/icon_zhanqishenqing@2x.png" />
+            </view>
+            <view style="margin-top:14rpx;">
+              <text>展期申请</text>
+            </view>
+          </view>
+          <view class="item weui-flex__item" bindtap="settlement">
+            <image style="width:54rpx;height:60rpx;" src="/images/index/icon_tiqianjieqing@2x.png" />
+            <view style="margin-top:14rpx;">
+              <text>提前结清</text>
+            </view>
+          </view>
+
+          <view class="item weui-flex__item" bindtap="interfaceApi">
+            <image style="width:54rpx;height:60rpx;" src="/images/index/icon_buquanziliao@2x.png" />
+            <view style="margin-top:14rpx;">
+              <text>信息补录</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- END 项目 -->
+
+    <!-- 我的申请 -->
+    <block wx:if="{{applyData}}">
+      <view class="m-apply f-mgt10" wx:if="{{userInfo.loanStatus =='S0401' || userInfo.loanStatus =='S0402' ||  userInfo.loanStatus =='S0403' }}">
+        <view class="weui-cell">
+          <view class="weui-cell__bd">
+            我的申请
+          </view>
+          <view class="c-secondary">
+            <text class="f-mgr6">{{applyData.statusTips}}</text>
+            <!-- <image class="icon-right" src="/images/index/iconfont-youjiantou2@2x.png"></image> -->
+          </view>
+        </view>
+        <view class="weui-cell">
+          {{applyData.prov}} {{applyData.loanType}}
+        </view>
+        <view class="g-mn">
+          <view class="m-loan_info weui-cell weui-cell-2">
+            <view class="bank-box f-tc">
+              <view class="bank-icon {{util.icon(applyData.bankname)}} "></view>
+              <view class="f-mgt15">{{applyData.bankname || "--"}}</view>
+            </view>
+            <view class="weui-cell__bd">
+              <view style="font-size:15px;">合计：
+                <text class="c-primary">¥{{applyData.loanAmount}}</text>
+              </view>
+              <view class="desc f-mgt10">每期：¥{{applyData.loanPerAmount}}，共{{applyData.loanYear || '-'}}期</view>
+              <view class="desc">申请日期：{{applyData.applyTime || '-'}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <!-- IF审核未通过 -->
+    <block wx:if="{{applyData.loanStatus=='S0404' || userInfo.loanStatus=='S0404'}}">
+      <view class="apply-title">
+        <view class="weui-cell__bd f-left">
+          我的申请
+        </view>
+        <view class="c-secondary f-right">
+          <text class="f-mgr6">{{applyData.statusTips}}</text>
+        </view>
+      </view>
+      <view class="g-mn f-left">
+        <view class="f-tc f-mgt30">
+          <view style="font-size:17px;">{{applyData.statusTips}}</view>
+          <view style="color:#343b36;">原因：{{applyData.remark}}</view>
+        </view>
+        <view class="f-tc" style="margin-top:60rpx;">
+          <navigator url="../../apply_loan/apply_edit/step1/index">
+            <view class="u-btn u-btn-primary">前往修改</view>
+          </navigator>
+        </view>
+      </view>
+    </block>
+  </block>
+
+
+  <!-- 信息回执时显示的  我的贷款内容 -->
+  <block>
+    <view class="my-loan" wx:for="{{loanList}}" wx:for-item="item" wx:key="*this">
+      <view class="loan-title loan-icon">我的贷款</view>
+      <view class="loan-place">
+        <view class="f-left place-name ">{{item.prov}} {{item.loanType}}</view>
+        <view class="bank-name f-right">{{item.bankname}}</view>
+      </view>
+      <view class="cell-view f-left color666">
+        <text>申请日期：{{item.applyTime}}</text>
+      </view>
+
+      <view class="cell-view f-left color666">
+        <text class="f-left">{{item.innerBank || '-'}}</text>
+      </view>
+
+      <view class="cell-view f-left">
+        <text class="color666">{{item.support || '-'}}</text>
+      </view>
+      <view class="period cell-view f-left">
+        <text>每期{{item.loanPerAmount}}，共{{item.loanYear}}期</text>
+        <view class="f-right total">合计:
+          <text class="m-color">{{item.loanAmount}}</text>
+        </view>
+      </view>
+
+      <!-- IF审核通过 -->
+      <view class="m-feedback list-view f-left">
+        <view class="weui-cell weui-cell-4 header">
+          <view class="weui-cell__bd">
+            放款时间
+          </view>
+          <view>
+            放款金额
+          </view>
+        </view>
+        <view class="list-period">
+          <block wx:for="{{item.receipt}}" wx:for-item="list" wx:key="key">
+            <view class="weui-cell weui-cell-4">
+              <view class="weui-cell__bd">
+                {{list.perTime || "-" }}
+              </view>
+              <view>
+                {{list.perAmount}}
+              </view>
+            </view>
+          </block>
+        </view>
+        <view class="weui-cell weui-cell-4 footer">
+          <view class="weui-cell__bd">
+            已放款{{item.moneyTimes}}期，还剩{{item.hasTimes}}期
+          </view>
+          <view>
+            总计：
+            <text class="c-primary">¥{{item.perTotal}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+
+
+
+  <!-- 没有贷款的情况下 -->
+  <block wx:if="{{!userInfo.cLoanId && isLogin==true || userInfo.loanStatus =='S02' || userInfo.loanStatus =='S03' }}">
+    <view style="margin-top:270rpx;" class="f-tc">
+      <image style="width:170rpx;height:130rpx;" src="/images/repayment_plan/icon_meiyoujilu@2x.png"></image>
+      <view class="f-mgt20">当前尚无贷款记录</view>
+    </view>
+  </block>
+  <!-- 没有登录的状态 -->
+  <block wx:if="{{isLogin==false}}">
+    <view style="margin-top:270rpx;" class="f-tc">
+      <image style="width:170rpx;height:130rpx;" src="/images/repayment_plan/icon_meiyoujilu@2x.png"></image>
+      <view class="f-mgt20">你还没有登录</view>
+    </view>
+  </block>
+
+</view>

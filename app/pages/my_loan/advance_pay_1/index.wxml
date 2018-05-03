@@ -1,0 +1,237 @@
+<wxs src="../../../utils/common.wxs" module="util" />
+<view class="container">
+
+  <block wx:if="{{statusType==0}}">
+    <view class="page">
+      <view class="page__bd">
+        <view class="weui-tab">
+          <view class="weui-navbar">
+            <block wx:for="{{list.banks}}" wx:for-item="item" wx:key="*this">
+              <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                <view class="weui-navbar__title">{{item.bankname}}</view>
+              </view>
+            </block>
+            <view wx:if="{{list.banks.length > 1}}" class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+          </view>
+          <view class="weui-tab__panel">
+
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view style="padding: 30rpx 46rpx;">请选择需要提前还清的款项</view>
+    <view class="m-table">
+      <!-- 头 -->
+      <view class="item weui-cell weui-cell-5">
+        <view class="hd weui-cell__hd"></view>
+        <view class="weui-cell__bd">
+          学年
+        </view>
+        <view class="weui-cell__bd">
+          应还
+        </view>
+        <view class="weui-cell__bd">
+          已还
+        </view>
+        <view class="weui-cell__bd">
+          逾期
+        </view>
+        <view class="weui-cell__bd">
+          剩余
+        </view>
+      </view>
+      <!-- 数据 -->
+
+      <view wx:for="{{list.banks[activeIndex].bankData}}" wx:for-item="item" wx:key="*this" bindtap='itemChosen' id="{{index}}">
+
+        <view class="item weui-cell weui-cell-5">
+          <view class="hd weui-cell__hd">
+            <image class="icon-bank" wx:if="{{item.complete}}" src="/images/extension_repayment/icon_yihuanqing@2x.png"></image>
+            <image class="icon-select" wx:elif="{{!temporaryChoseItems[index]}}" src="/images/extension_repayment/icon_weixuanze_da@2x.png"></image>
+            <image class="icon-select" wx:else src="/images/extension_repayment/icon_xuanze_da@2x.png"></image>
+          </view>
+
+          <view class="content weui-cell weui-cell-4 weui-cell__bd">
+            <view class="weui-cell__bd">
+              {{item.year}}
+            </view>
+            <view class="weui-cell__bd">
+              {{item.payAmount}}
+            </view>
+            <view class="weui-cell__bd">
+              {{item.actualAmount}}
+            </view>
+            <view class="weui-cell__bd">
+              {{item.overdateAmount}}
+            </view>
+            <view class="weui-cell__bd">
+              {{item.delayAmount}}
+            </view>
+          </view>
+
+        </view>
+
+      </view>
+
+    </view>
+
+    <view class="m-footer weui-cell" hidden='{{!isShowResultView}}'>
+      <view class="weui-cell__bd"></view>
+      <view class="weui-cell__ft">
+        累计逾期：
+        <text style="font-size:16px;">¥{{util.toFix(allOverdue)}}</text>
+      </view>
+    </view>
+
+    <view class="m-footer padding_15" hidden='{{!isShowResultView}}'>
+      <view class="weui-cell__bd"></view>
+      <view class="weui-cell__ft">
+        已选择 提前还款：
+        <text style="font-size:16px;">¥{{util.toFix(allAdvance)}}</text>
+      </view>
+    </view>
+
+    <view class="m-footer padding_15" hidden='{{!isShowResultView}}'>
+      <view class="weui-cell__bd"></view>
+      <view class="weui-cell__ft fz-36">
+        总计：
+        <text class="c-primary"></text>
+        <text style="font-size:36px;" class="c-primary">¥{{util.toFix(allTotal)}}</text>
+      </view>
+    </view>
+
+    <!-- 按钮 -->
+    <view class="f-tc" style="margin-top:64rpx;" bindtap='comfirmBtn' hidden='{{!isShowResultView}}'>
+      <view class="u-btn u-btn-primary">确认</view>
+    </view>
+
+  </block>
+
+  <block wx:if="{{statusType==1}}">
+    <view class="container">
+      <view class='page'>
+        <view class="hd weui-cell__hd  g-mn">
+          <image class="icon-select" src="/images/extension_repayment/icon_wodeyueyue@2x.png"></image>
+          <text class='fz-36 g-mn'>我的预约</text>
+        </view>
+
+        <view class="page__bd">
+          <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+              <view class="weui-cell__bd">银行扣款日</view>
+              <view class="weui-cell__ft">{{bankTime}}</view>
+            </view>
+          </view>
+        </view>
+
+        <view class="page__bd">
+          <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+              <view class="weui-cell__bd">还款银行卡</view>
+              <view class="weui-cell__ft">{{cardCode}}</view>
+            </view>
+          </view>
+        </view>
+
+        <view class="page__bd">
+          <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+              <view class="weui-cell__bd">提前还款金额</view>
+              <view class="weui-cell__ft c-primary">¥{{repayAmount}}</view>
+            </view>
+          </view>
+        </view>
+
+        <view class="page__bd">
+          <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+              <view class="weui-cell__bd">当前状态</view>
+              <view class="weui-cell__ft">{{statusTips}}</view>
+            </view>
+          </view>
+        </view>
+
+        <view class='weui_cell font_text g-mn font_30 f-mgt15'>
+          <text>1、请于<text style='color:red;'>{{time}}</text>前在此绑定还款卡中存入上述金额；\n\n</text>
+          <text>2、为确保能顺利结清，请在前述金额的基础上多存入100元；</text>
+        </view>
+
+        <!-- 按钮 -->
+        <view class="f-tc" style="margin-top:64rpx;" bindtap='comfirmBtnHome'>
+          <view class="u-btn u-btn-primary">确认</view>
+        </view>
+
+      </view>
+    </view>
+  </block>
+
+  <block wx:if="{{statusType==2}}">
+    <view class="container">
+      <view class='page'>
+        <view class="hd weui-cell__hd  g-mn">
+          <image class="icon-select" src="/images/extension_repayment/icon_wodeyueyue@2x.png"></image>
+          <text class='fz-36 g-mn'>我的预约</text>
+        </view>
+
+        <view class="page__bd">
+          <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+              <view class="weui-cell__bd">银行扣款日</view>
+              <view class="weui-cell__ft">{{bankTime}}</view>
+            </view>
+          </view>
+        </view>
+
+        <view class="page__bd">
+          <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+              <view class="weui-cell__bd">还款银行卡</view>
+              <view class="weui-cell__ft">{{cardCode}}</view>
+            </view>
+          </view>
+        </view>
+
+        <view class="page__bd">
+          <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+              <view class="weui-cell__bd">提前还款金额</view>
+              <view class="weui-cell__ft c-primary">¥{{repayAmount}}</view>
+            </view>
+          </view>
+        </view>
+
+        <view class="page__bd">
+          <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+              <view class="weui-cell__bd">当前状态</view>
+              <view class="weui-cell__ft">{{statusTips}}</view>
+            </view>
+          </view>
+        </view>
+
+        <view class='weui_cell font_text g-mn font_30 f-mgt15'>
+          <text>1、请于<text style='color:red;'>{{time}}</text>前在此绑定还款卡中存入上述金额；\n\n</text>
+          <text>2、为确保能顺利结清，请在前述金额的基础上多存入100元；</text>
+        </view>
+
+        <!-- 按钮 -->
+        <view class='btn_layout'>
+          <view class="f-tc f-left" style="margin-top:64rpx;" bindtap='comfirmBtnHome'>
+            <view class="u-btn u-btn-cancle">返回首页</view>
+          </view>
+
+          <view class="f-tc f-right" style="margin-top:64rpx;" bindtap='comfirmBtnBook'>
+            <view class="u-btn u-btn-accept">再次预约</view>
+          </view>
+        </view>
+
+
+      </view>
+    </view>
+  </block>
+
+
+
+
+</view>

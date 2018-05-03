@@ -1,0 +1,46 @@
+/* 还款表格 */
+.m-table{
+    background-color: #fff;
+    text-align: center;
+}
+.m-table .hd{
+    width: 100rpx;
+}
+.m-table .content{
+    border-bottom: 1px solid #e6e9e8;
+}
+.m-table .item:last-child .content{
+    border-bottom: none;
+}
+
+.padding_15{
+  padding-right: 15px;
+}
+
+/* 统计 */
+.m-footer{
+    background-color: #fff;
+}
+
+page,
+.page,
+.page__bd{
+    height: 100%;
+}
+.page__bd{
+    padding-bottom: 0;
+}
+.weui-tab__content{
+    padding-top: 60px;
+    text-align: center;
+}
+
+.font_30{
+  font-size: 30rpx;
+}
+
+.btn_layout{
+  height:100rpx;
+  witdh:100%;
+  padding: 30rpx;
+}

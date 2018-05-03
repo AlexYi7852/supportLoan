@@ -1,0 +1,128 @@
+/* 贷款类型选择 */
+
+.m-select {
+}
+
+.m-select .label {
+  min-width: 140rpx;
+}
+
+.m-select .content-wrap {
+  width: 510rpx;
+}
+
+.m-select .content {
+  background-color: #fff;
+  padding: 20rpx 16rpx;
+  width: 510rpx;
+}
+
+.m-select-1 .content {
+  background-color: #f3f6f4;
+  width: 100%;
+}
+
+.m-select-2 .content {
+  width: 100%;
+  padding: 20rpx 0;
+}
+
+/* tab标题 */
+
+.m-title {
+  background-color: #fff;
+  color: #000;
+  font-size: 17px;
+  padding: 50rpx 46rpx;
+  box-sizing: border-box;
+  padding-left: 70rpx;
+  width: 100%;
+  border-bottom: 8rpx solid #f3f6f4;
+}
+
+/* tab内容 */
+
+.m-content {
+  background-color: #fff;
+}
+
+.m-content .item {
+  padding: 15rpx 0;
+}
+
+.m-content .c-sub {
+  color: #a5a9a6;
+}
+
+/* 表单 */
+
+.m-form {
+  border-top: 1px solid #e4e9e7;
+  padding-top: 40rpx;
+}
+
+.m-form-1 {
+  border-top: none;
+  padding-top: 0;
+}
+
+.m-form-2 {
+  border-top: none;
+  padding-top: 0;
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid #e4e9e7;
+}
+
+/* 银行卡信息 */
+
+.m-bank .add-card {
+  width: 100%;
+  height: 200rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f7f6;
+  text-align: center;
+  color: #999f9b;
+  border-radius: 8px;
+}
+
+.m-bank .card {
+  background-color: #a1569b;
+  border-radius: 8px;
+  padding: 26rpx 30rpx;
+  color: #fff;
+}
+
+.m-bank .card .sub {
+  font-size: 12px;
+}
+
+.m-bank .tip1 {
+  color: #989e9a;
+  font-size: 13px;
+}
+
+.m-bank .change {
+  color: #4193d2;
+}
+.weui-cell-2 input {
+  width: 100%;
+}
+
+.item-title {
+  width: 220rpx;
+  display: block !important;
+  float: left;
+  text-align: left;
+}
+
+.modal {
+  margin-top: -50px;
+}
+
+.value {
+  text-align: right;
+  width: 500rpx;
+  float: right;
+}

@@ -1,0 +1,110 @@
+<wxs src="../../../utils/common.wxs" module="util" />
+<view class="container">
+  <!-- 尚无还款记录 -->
+  <view style="margin-top:270rpx;" class="f-tc" wx:if="{{show==false}}">
+    <image style="width:170rpx;height:130rpx;" src="/images/repayment_plan/icon_meiyoujilu@2x.png"></image>
+    <view class="f-mgt20">当前尚无还款信息</view>
+  </view>
+  <block wx:if="{{show==true}}">
+    <view class="box" bindtap='btnBankSwitch'>
+      <view> {{bankname}}：{{bankcode}}</view>
+      <view style='margin-left:20rpx;' hidden='{{!showBank}}'>
+        <image class="icon-down" src="/images/apply_loan/icon_xiala@2x.png"></image>
+      </view>
+    </view>
+    <view style='height:20rpx;background-color:rgb(237,239,237);'></view>
+    <!-- 有还款记录 -->
+    <view class="m-record" style="padding-bottom:100rpx;">
+      <view class="u-title fz-36">当前还款</view>
+      <view class="f-mgt10">
+        <view class="weui-cell weui-cell-2">
+          <view class="weui-cell__bd font_text">
+            上次应还：¥{{lastPeriodDebt}}
+          </view>
+          <view class="weui-cell__bd font_text">
+            实 还：¥{{currentHasPay}}
+          </view>
+        </view>
+        <view class="weui-cell weui-cell-2 m_t">
+          <view class="weui-cell__bd font_text">
+            逾 期：¥{{currentOverdate}}
+          </view>
+          <view class="weui-cell__bd font_text">
+            累计逾期：¥{{cumulativeDebt}}
+          </view>
+        </view>
+
+        <view class="this-term f-mgt10">
+          <view class="weui-cell weui-cell-2">
+            <view class="weui-cell__bd" style="font-size:40rpx;">
+              本期应还：
+            </view>
+            <view class="weui-cell__bd ft c-primary" style="font-size: 40rpx;">
+              ¥{{currentPreiodShouldPay}}
+            </view>
+          </view>
+          <view class="weui-cell weui-cell-2">
+            <view class="weui-cell__bd " style='padding-top:40rpx;font-size: 30rpx;'>
+              还款日：
+            </view>
+            <view class="weui-cell__bd ft" style='padding-top:40rpx;font-size: 30rpx;'>
+              {{payDate}}
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view style='height:20rpx;background-color:rgb(237,239,237);margin-top:100rpx;'></view>
+
+      <!-- 扇形图及数据 -->
+      <block hidden='{{totalShouldPay == 0}}'>
+        <view class="weui-cell weui-cell-2 f-mgt30">
+          <view class="weui-cell__bd">
+            <view class="u-title fz-36">总计</view>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell-2 f-mgt30">
+          <view class="weui-cell__bd" hidden='{{totalShouldPay==0}}'>
+            <canvas id="piechart" canvas-id="pie-chart" style="width: {{canvasW}}; height: {{canvasH}}"></canvas>
+          </view>
+          <view class="weui-cell__bd">
+            <view style='font-size: 40rpx;'>应还：
+              <text class="c-primary">¥{{totalShouldPay}}</text>
+            </view>
+            <view>
+              <text class="c-primary" style='font-size: 30rpx;'>●</text> 实还：¥{{totalHasPay}}</view>
+            <view>
+              <text class="c-danger" style='font-size: 30rpx;'>●</text> 逾期：¥{{totalOverdate}}</view>
+          </view>
+
+        </view>
+
+        <!-- 按钮 -->
+        <view class="f-tc" style="margin-top:100rpx;">
+          <view class="u-btn u-btn-primary" bindtap='confirmBtn'>查看年度还款计划</view>
+        </view>
+
+      </block>
+
+      <!-- 毕业前暂时不需要还款 不显示扇形图 -->
+      <!-- <view class="f-tc f-mgt30">
+      <image style="width:170rpx;height:130rpx;" src="/images/repayment_plan/icon_meiyoujilu@2x.png"></image>
+      <view class="f-mgt10">毕业前暂时不需要还款哦！</view>
+    </view> -->
+    </view>
+
+    <view class="g-mn" style="margin-top:40rpx;" hidden='true'>
+      <view>我的贷款：</view>
+      <view class="m-mine f-mgt10">
+        <view class="weui-cell weui-cell-2">
+          <view class="weui-cell__bd title">
+            黑龙江 生源地助学贷款
+          </view>
+          <view class="c-dark" style="font-size:13px;">2015/09~2017/07</view>
+        </view>
+        <view>每期5000，共3期，合计15000元</view>
+      </view>
+    </view>
+  </block>
+
+</view>

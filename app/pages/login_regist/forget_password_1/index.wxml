@@ -1,0 +1,17 @@
+<view class="container g-mn">
+  <view class="m-form f-mgt30">
+    <view class="weui-cell weui-cell-2">
+      <view class="weui-cell__hd label">
+        账 号
+      </view>
+      <view class="weui-cell__bd content">
+        <input placeholder="请输入身份证号" type="idcard" maxlength="18" bindinput="certCodeInput" />
+      </view>
+    </view>
+  </view>
+
+  <!-- 按钮 -->
+  <view class="f-tc mt-240" bindtap="sendPwdCode">
+    <view class="u-btn u-btn-primary">下一步</view>
+  </view>
+</view>

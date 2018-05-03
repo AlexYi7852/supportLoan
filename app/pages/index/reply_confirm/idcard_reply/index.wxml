@@ -1,0 +1,22 @@
+<view class="container">
+  <view class="s1 g-mn">
+    <view class="m-info f-tc">
+      <image style="width:146rpx;height:112rpx;" src="/images/reply_confirm/icon_gaoxiaoyiqueren@2x.png"></image>
+      <view class="f-mgt20">已由高校确认</view>
+    </view>
+    <view class="m-upload">
+      <view class="f-mgt20">请拍照上传手持身份证合照</view>
+      <view class="f-mgt10">
+        <view class="upload img-bg">
+          <image mode="aspectFill" class="image result" data-url="{{url}}" bindtap="uploadImage" src="{{url}}"></image>
+          <image class="icon-delete" data-url="{{url}}" bindtap="deleteImage" src="/images/apply_loan/icon_shanchu@2x.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 按钮 -->
+  <view class="f-tc" style="margin-top:60rpx;" bindtap="interfaceApiCallBack">
+    <view class="u-btn u-btn-primary">确认上传</view>
+  </view>
+</view>

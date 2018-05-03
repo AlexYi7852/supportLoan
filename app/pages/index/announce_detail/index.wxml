@@ -1,0 +1,23 @@
+<import src="../../../component/wxParse/wxParse.wxml" />
+<view class="wxParse">
+  <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+</view>
+
+<view class="container">
+  <view class="m-header g-mn">
+    <view class="title">{{announce.title}}</view>
+    <view class="f-mgt15">
+      <image class="icon-clock" src="/images/index/icon-shijian@2x.png"></image>
+      <text class="time">{{announce.time}}</text>
+    </view>
+  </view>
+  <view class="m-article g-mn">
+    <view>
+      <view class="paragraph">
+        <view class="wxParse">
+          <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,37 @@
+<view class="container g-mn">
+  <view class="m-bank">
+    <view class="tip">
+      <text class="c-warn">*</text>需使用哈尔滨银行借记卡（储蓄卡）</view>
+    <view class="tip1 f-mgt10">请选择绑定银行卡</view>
+
+    <view class="card weui-cell weui-cell-1 f-mgt20">
+      <view class="weui-cell__hd f-mgr15">
+        <image style="width:84rpx;height:84rpx;" src="/images/side_sub/yinhanglogo_haerbin@2x.png"></image>
+      </view>
+      <view class="weui-cell__bd">
+        <view>哈尔滨银行</view>
+        <view class="sub">储蓄卡</view>
+        <view>1236 **** **** 4567</view>
+      </view>
+    </view>
+
+    <view class="card weui-cell weui-cell-1 f-mgt20">
+      <view class="weui-cell__hd f-mgr15">
+        <image style="width:84rpx;height:84rpx;" src="/images/side_sub/yinhanglogo_haerbin@2x.png"></image>
+      </view>
+      <view class="weui-cell__bd">
+        <view>哈尔滨银行</view>
+        <view class="sub">储蓄卡</view>
+        <view>1236 **** **** 4567</view>
+      </view>
+    </view>
+
+    <view class="add-card f-mgt20">
+      <view>
+        <image style="width:100rpx;height:74rpx;" mode="aspectFit" src="/images/apply_loan/icon_tianjiayinhnagka@2x.png"></image>
+        <view>添加银行卡</view>
+      </view>
+    </view>
+    
+  </view>
+</view>

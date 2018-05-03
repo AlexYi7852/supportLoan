@@ -1,0 +1,63 @@
+
+
+/* tab标题 */
+
+.m-title {
+    background-color: #bbb;
+    color: #fff;
+    font-size: 17px;
+    padding: 30rpx 46rpx;
+}
+
+.m-title.z-active {
+    background-color: #07944a;
+}
+
+
+/* tab内容 */
+
+.m-content {
+    background-color: #fff;
+    padding: 40rpx 30rpx;
+}
+.m-content .header{
+    border-bottom: 1px solid #e4e9e7;
+    padding-bottom: 20rpx;
+}
+.m-content .item {
+    padding: 15rpx 0;
+}
+
+.m-content .c-sub {
+    color: #a5a9a6;
+}
+
+
+/* 审核反馈 */
+.m-info{
+    background-color: #fff;
+}
+.m-info .content {
+    background-color: #e7fbf1;
+}
+.m-info .content-1 {
+    background-color: transparent;
+}
+.m-info .content .item{
+    padding: 15rpx 20rpx;
+}
+.m-info .header {
+    border-bottom: 1px solid #e4e9e7;
+}
+
+.m-info .footer {
+    border-top: 1px solid #e4e9e7;
+}
+
+.m-info .header-1 {
+    border-bottom: none;
+}
+
+.m-info .footer-1 {
+    border: none;
+}

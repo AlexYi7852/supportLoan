@@ -1,0 +1,17 @@
+<view class="container f-tc">
+  <image style="margin-top:100rpx;" class="icon-face" src="/images/face_recognize/icon-face@2x.png"></image>
+  <view class="f-mgt20">请进行人脸识别验证身份</view>
+  <view>并确保你本人操作</view>
+
+  <!-- 按钮 -->
+  <view class="f-tc" style="margin-top:120rpx;margin-bottom:150rpx;">
+    <view class="u-btn u-btn-primary">下一步</view>
+  </view>
+
+  <!-- 底部信息 -->
+  <view class="g-btm">
+    <view class="c-sub">点击按钮代表你同意华安助学贷使用上述信息</view>
+    <view class="c-secondary">查看详情</view>
+  </view>
+  
+</view>

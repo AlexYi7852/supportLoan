@@ -1,0 +1,42 @@
+<view class="container">
+  <!-- 信息 -->
+  <view class="g-mn s1">
+    <view class="m-info">
+      <view class="weui-cell weui-cell-2">
+        <view class="title weui-cell__bd">
+          {{loanData.prov}} {{loanData.loanType}}
+        </view>
+        <view>
+          <!-- <image class="f-mgr6" style="width:40rpx;height:26rpx;" src="/images/index/yinhanglogoda-smal@2x.png"></image> -->
+          {{loanData.bankname}}
+        </view>
+      </view>
+      <view class="content weui-cell weui-cell-2 f-mgt10">
+        <view class="weui-cell__bd">
+          每期¥{{loanData.loanPerAmount}}，共{{loanData.loanYear}}期
+        </view>
+        <view>
+          合计：¥{{loanData.loanAmount}}
+        </view>
+      </view>
+      <view class="subtitle f-mgt20">开放续贷：</view>
+      <view class="content weui-cell weui-cell-2 f-mgt10">
+        <view>
+          第{{loanData.currTimes}}期
+        </view>
+        <view class="weui-cell__bd f-tc">
+          本期金额： ¥{{loanData.loanPerAmount}}
+        </view>
+        <view>
+          剩余{{loanData.hasTimes}}期
+        </view>
+      </view>
+    </view>
+    <view style="padding:100rpx 60rpx 60rpx;" class="s1 f-tc">
+      <image style="width:240rpx;height:160rpx;" src="/images/reply_confirm/icon_shenhezhong@2x.png"></image>
+      <view class="f-mgt20">请等待工作人员确认</view>
+      <view style="font-size:13px;" class="f-mgt10">工作人员确认后需要2~3个工作日更新状态</view>
+    </view>
+  </view>
+
+</view>

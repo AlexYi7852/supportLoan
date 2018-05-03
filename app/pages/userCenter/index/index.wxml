@@ -1,0 +1,110 @@
+<view class="container">
+  <!-- if 未登录 头像 -->
+  <block wx:if="{{!userInfo.token}}">
+    <navigator url="../../login_regist/login/index">
+      <view class="m-avatar">
+        <image style="width:246rpx;height:150rpx;margin-left:-20rpx;" src="/images/user_center/icon-touxinag@2x.png"></image>
+        <view class="access f-mgt20">登录/注册</view>
+      </view>
+    </navigator>
+  </block>
+  <!-- if 已登录 -->
+  <view class="m-avatar" wx:else>
+    <view class="g-icon">
+      <navigator url="../personal_info/index">
+        <image style="width:38rpx;height:38rpx;" src="/images/user_center/icon_bianji@2x.png"></image>
+      </navigator>
+    </view>
+    <view class="title">{{userInfo.userName || " "}}</view>
+    <view class="school f-mgt10">{{userInfo.college || ""}}</view>
+    <view class="c-dark" style="display:inline-block">
+      <text class="f-mgr10">{{userInfo.mobile || ""}}</text>
+      <image wx:if="{{userInfo.wechat}}" class="f-mgr6" style="width: 30rpx;height: 24rpx;" src="/images/user_center/weixin@2x.png"></image>
+      <image wx:if="{{userInfo.qq}}" class="f-mgr6" style="width: 22rpx;height: 24rpx;" src="/images/user_center/QQ@2x.png"></image>
+      <image wx:if="{{userInfo.email}}" class="f-mgr6" style="width: 26rpx;height: 20rpx;" src="/images/user_center/youxiang@2x.png"></image>
+    </view>
+  </view>
+
+  <!-- 导航一 -->
+  <view class="m-badge f-mgt10">
+    <view class="weui-cell weui-cell-2 item" data-url="../my_bank_card/index" bindtap="linkUrl">
+      <view class="weui-cell__hd f-mgr10">
+        <image style="width: 48rpx;height: 36rpx;" src="/images/user_center/icon_wodeyinhangka@2x.png"></image>
+      </view>
+
+      <view class="bd weui-cell__bd weui-cell__ft_in-access">
+        <view>我的银行卡</view>
+      </view>
+
+    </view>
+    <view class="weui-cell weui-cell-2 item" data-url="../my_contacts/index" bindtap="linkUrl">
+      <view class="weui-cell__hd f-mgr10">
+        <image style="width: 48rpx;height: 40rpx;" src="/images/user_center/icon_wodelianxiren@2x.png"></image>
+      </view>
+
+      <view class="bd weui-cell__bd weui-cell__ft_in-access">
+        <view>我的联系人</view>
+      </view>
+
+    </view>
+    <view class="weui-cell weui-cell-2 item" data-url="../contract_text/index" bindtap="linkUrl">
+      <view class="weui-cell__hd f-mgr10">
+        <image style="width: 48rpx;height: 48rpx;" src="/images/user_center/icon_hetongwenben@2x.png"></image>
+      </view>
+      <view class="bd weui-cell__bd weui-cell__ft_in-access">
+        <view>我的合同文本</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 导航二 -->
+  <view class="m-badge f-mgt10">
+    <view class="weui-cell weui-cell-2 item" data-url="../settings/index" bindtap="linkUrl">
+      <view class="weui-cell__hd f-mgr10">
+        <image style="width: 48rpx;height: 46rpx;" src="/images/user_center/icon_shezhi@2x.png"></image>
+      </view>
+      <view class="bd weui-cell__bd weui-cell__ft_in-access">
+        <view>设置</view>
+      </view>
+    </view>
+    <view class="weui-cell weui-cell-2 item">
+      <view class="weui-cell__hd f-mgr10">
+        <image style="width: 48rpx;height: 46rpx;" src="/images/user_center/icon_guanyuwomen@2x.png"></image>
+      </view>
+      <view class="bd weui-cell__bd weui-cell__ft_in-access">
+        <navigator url="../about_us/index">
+          <view>关于我们</view>
+        </navigator>
+      </view>
+    </view>
+    <view class="weui-cell weui-cell-2 item">
+      <view class="weui-cell__hd f-mgr10">
+        <image style="width: 48rpx;height: 38rpx;" src="/images/user_center/icon_lianxikefu@2x.png"></image>
+      </view>
+      <view class="bd weui-cell__bd weui-cell__ft_in-access">
+        <button class="contact-btn" plain="false" hover-class="none" open-type="contact">
+          <view>联系客服</view>
+        </button>
+      </view>
+    </view>
+    <view class="weui-cell weui-cell-2 item">
+      <view class="weui-cell__hd f-mgr10">
+        <image style="width: 48rpx;height: 48rpx;" src="/images/user_center/icon_changjianwenti@2x.png"></image>
+      </view>
+      <view class="bd weui-cell__bd weui-cell__ft_in-access">
+        <navigator url="../../index/FAQ/index">
+          <view>常见问题</view>
+        </navigator>
+      </view>
+    </view>
+    <!-- <view class="weui-cell weui-cell-2 item" bindtap="downAPP">
+      <view class="weui-cell__hd f-mgr10">
+        <image style="width: 48rpx;height: 48rpx;" src="/images/user_center/icon_xiazaiapp@2x.png"></image>
+      </view>
+      <view class="bd weui-cell__bd weui-cell__ft_in-access">
+        <view>下载APP</view>
+      </view>
+    </view> -->
+
+  </view>
+</view>

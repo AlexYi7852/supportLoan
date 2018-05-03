@@ -1,0 +1,12 @@
+.item{
+    height: 88rpx;
+    line-height: 88rpx;
+    text-align: center;
+    color: #fff;
+}
+navigator:nth-child(odd) .item{
+    background-color: #999;
+}
+navigator:nth-child(even) .item {
+    background-color: #666;
+}

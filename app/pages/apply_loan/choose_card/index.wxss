@@ -1,0 +1,36 @@
+/* 银行卡信息 */
+.m-bank .add-card {
+    width: 100%;
+    height: 200rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f7f6;
+    text-align: center;
+    color: #999f9b;
+    border-radius: 8px;
+}
+
+.m-bank .card {
+    background-color: #a1569b;
+    border-radius: 8px;
+    padding: 26rpx 30rpx;
+    color: #fff;
+}
+
+.m-bank .card .sub {
+    font-size: 12px;
+}
+
+.m-bank .tip .c-warn {
+    color: #ff0000;
+}
+
+.m-bank .tip1 {
+    color: #989e9a;
+    font-size: 13px;
+}
+
+.m-bank .change {
+    color: #4193d2;
+}

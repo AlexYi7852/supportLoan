@@ -1,0 +1,24 @@
+/* FAQ */
+.m-faq .header{
+    position: relative;
+    background-color: #fff;
+}
+.m-faq .header .bd{
+    padding: 10rpx 0;
+}
+.m-faq .header .bd::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #e4e9e7;
+    position: absolute;
+    bottom: 0;
+}
+.m-faq:last-child .header .bd::after{
+    display: none;
+}
+.m-faq .content{
+    text-indent: 2em;
+    text-align: justify;
+}

@@ -1,0 +1,29 @@
+<view class="container">
+
+  <view class="camera-wrap">
+      <view class="time">00:0{{time}}</view>
+      <view class="camerabox">
+        <block wx:if="{{isVideoDone}}">
+          <video class='video' src="{{viewSrc}}" autoplay ></video>
+        </block>
+        <block wx:else>
+          <camera device-position="front" flash="off" binderror="error" class='video'>
+            <cover-view class="page__bd page__bd_spacing">
+              <cover-view class="weui-flex">
+                <cover-view class="weui-flex__item">
+                  <cover-view class="placeholder2"> {{remindText}}</cover-view>
+                </cover-view>
+              </cover-view>
+            </cover-view>
+          </camera>
+        </block>
+      </view>
+   
+  </view>
+
+  <view class="code">{{random_number}}</view>
+  <view class="f-tc" style="margin-top:20rpx;" bindtap='takeRecord'>
+    <view class="u-btn u-btn-primary" bindtap="regist">{{btnTxt}}
+    </view>
+  </view>
+</view>

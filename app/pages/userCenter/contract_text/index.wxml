@@ -1,0 +1,36 @@
+<view class="container">
+  <block wx:if="{{list}}">
+    <view class="m-file">
+      <view class="header">
+        <image class="f-mgr6" style="width:28rpx;height:32rpx;" src="/images/user_center/icon_qianshudehetong@2x.png"></image>
+        <text>我签署的合同</text>
+      </view>
+      <view class="weui-cell weui-cell-2 header1">
+        <view class="weui-cell__bd">
+          合同名称
+        </view>
+        <view>签署时间</view>
+      </view>
+      <block wx:for="{{list}}" wx:for-item="item" wx:key="key">
+        <view class="weui-cell weui-cell-2 item" data-url="{{item.url}}" bindtap="openDocument">
+          <view class="weui-cell__bd c-secondary">
+            《{{item.type}}》
+          </view>
+          <view>{{item.time}}</view>
+        </view>
+      </block>
+    </view>
+
+    <!-- 按钮 -->
+    <view class="f-tc" style="margin-top:120rpx;margin-bottom:150rpx;" bindtap="sendUploadEmail">
+      <view class="u-btn u-btn-primary">全部发送至邮箱</view>
+    </view>
+    <view class="text-tip">
+      <view>将发送至您所绑定的</view>
+      <view>[{{userInfo.email || '请去补充邮箱'}}]</view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class='no-data'>暂无合同文本</view>
+  </block>
+</view>

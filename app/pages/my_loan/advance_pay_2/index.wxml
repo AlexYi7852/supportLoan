@@ -1,0 +1,64 @@
+<wxs src="../../../utils/common.wxs" module="util1" />
+<wxs module="util">
+  var icon = function(str) {
+    if (str == "哈尔滨银行" || str == "哈行银行") {
+      return "HRBANK"
+    }
+    if (str == "邮政储蓄银行" || str == "邮储银行") {
+      return "PSBC"
+    }
+    if (str == "建设银行" || str == "中国建设银行") {
+      return "CCB"
+    }
+  }
+  module.exports = {
+    icon: icon
+  }
+</wxs>
+<view class="container">
+  <view class="container g-mn">
+    <view class="m-bank">
+      <view class="tip" style='margin-top: 30rpx;margin-bottom: 30rpx;'>请于
+        <text style='color:red;'>{{time}}</text> 前在下列还款卡中存入相应金额</view>
+
+      <view wx:for="{{uiObjects}}" wx:for-item="item" wx:key="*this" wx:for-index="idx">
+
+        <view class="card card-1 weui-cell weui-cell-1  mb-30 {{util.icon(item.bankName)}}">
+          <view class="weui-cell__hd f-mgr15">
+            <view class="icon"></view>
+          </view>
+          <view class="weui-cell__bd">
+            <view>{{item.bankName}}</view>
+            <view class="sub">储蓄卡</view>
+            <view class="weui-cell weui-cell-2 f-mgt10">
+              <view class="weui-cell__bd">
+                {{item.cardCode}}
+              </view>
+            </view>
+          </view>
+        </view>
+
+        <view class="weui-cell">
+          <view class="weui_cells_title font_text">还款金额：</view>
+          <view class="weui-cell__bd"></view>
+          <view class="c-primary">
+            <text class="f-mgr6 font_text">¥{{util1.toFix(item.debt)}}</text>
+          </view>
+        </view>
+
+      </view>
+
+      <view class='weui_cell font_text'>
+        <text>1、为确保能顺利结清，请在前述金额的基础上多存入100元；\n</text>
+
+        <text>2、若要使用其他银行卡还款，请先至”我的银行卡“修改绑定。</text>
+      </view>
+
+      <!-- 按钮 -->
+      <view class="f-tc" style="margin-top:100rpx;">
+        <view class="u-btn u-btn-primary" bindtap='confirmBtn'>确认</view>
+      </view>
+
+    </view>
+  </view>
+</view>

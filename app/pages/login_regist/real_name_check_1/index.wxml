@@ -1,0 +1,88 @@
+<!-- 说明： 该页面也是注册的第一步：实名认证 -->
+<view class="container">
+    <!-- 身份证上传 -->
+    <view class="m-upload g-mn1">
+        <view>为了顺利验证身份证，请开启摄像头权限</view>
+        <view>
+            <view class="upload f-mgt15" bindtap="uploadFrontOcr">
+                <image class="img" mode="aspectFill" src="{{front || '/images/login_regist/pic_shenfenzheng1@2x.png'}}"></image>
+            </view>
+            <view class="upload f-mgt10" bindtap="uploadBackOcr">
+                <image class="img" mode="aspectFill" src="{{back || '/images/login_regist/pic_shenfenzheng2@2x.png'}}" ></image>
+            </view>
+        </view>
+    </view>
+    <!-- END 身份证上传 -->
+
+    <!-- 身份证信息表单 -->
+    <view class="m-info g-mn1">
+        <view>
+            <image class="icon-card" src="/images/login_regist/icon_querenxinxi@2x.png"></image> 确认信息
+        </view>
+        <view class="form">
+            <view class="weui-cell weui-cell-2 f-mgt20">
+                <view class="weui-cell__hd label">
+                    姓名：
+                </view>
+                <view class="weui-cell__bd content">
+                    <input value='{{idCardInfo.name}}' bindinput="nameInput" />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell-2 f-mgt20">
+                <view class="weui-cell__hd label">
+                    身份证号：
+                </view>
+                <view class="weui-cell__bd content">
+                    <input type="idcard" value='{{idCardInfo.id_card_number}}' bindinput="certCodeInput" maxlength="18" />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell-2 f-mgt20">
+                <view class="weui-cell__hd label">
+                    户籍地址：
+                </view>
+                <view class="weui-cell__bd content arrow-down" bindtap="openCityMenu">
+                    <input value='{{provName}} {{cityName}} {{countyName}}' disabled />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell-2 f-mgt20">
+                <view class="weui-cell__hd label">
+                    详细地址：
+                </view>
+                <view class="weui-cell__bd content" bindinput="addressInput">
+                    <input value='{{idCardInfo.address}}' bindinput="addressInput" />
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- END 身份证信息表单 -->
+
+    <!-- 按钮 -->
+    <view class="f-tc f-mgt30 f-mgb60" bindtap="saveByCertification1">
+        <view class="u-btn u-btn-primary">下一步</view>
+    </view>
+</view>
+
+
+<view class="city-wrap" wx:if="{{addressMenuIsShow}}">
+    <view class="title" style="text-align:center;">请选择户籍所在地
+        <view class="f-right city-confirm-btn" bindtap="closeCityMenu">确定</view>
+    </view>
+    <picker-view style="width: 100%; height: 300px;" bindchange="cityChange" value="{{value}}" wx:key="">
+        <picker-view-column>
+            <view wx:for="{{list}}" class="picker-item">
+                {{item.label}}
+            </view>
+        </picker-view-column>
+        <picker-view-column>
+            <view wx:for="{{citys}}" class="picker-item">
+                {{item.label || "-"}}
+            </view>
+        </picker-view-column>
+
+        <picker-view-column>
+            <view wx:for="{{areas}}" class="picker-item">
+                {{item.label || "-"}}
+            </view>
+        </picker-view-column>
+    </picker-view>
+</view>

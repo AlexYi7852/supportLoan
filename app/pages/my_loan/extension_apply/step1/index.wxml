@@ -1,0 +1,137 @@
+<view class="container">
+  <view class="m-content g-mn">
+    <view>请填写以下信息</view>
+    <view class="m-form m-form-1">
+      <view class="m-select m-select-1 weui-cell weui-cell-2 f-mgt15">
+        <view class="weui-cell__hd label">
+          <view>升学就读</view>
+          <view>高校：</view>
+        </view>
+        <view class="weui-cell__bd content-wrap">
+          <view class="weui-cell weui-cell-2 content" >
+            <view class="weui-cell__bd">
+             <city-html addressMenuIsShow="{{addressMenuIsShow}}" cityCodes="{{cityCodes}}" binddetail="bindtap"></city-html>
+            </view>
+            <view>
+              <image class="icon-down" src="/images/apply_loan/icon_xiala@2x.png"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="m-select m-select-1 weui-cell weui-cell-2 f-mgt15">
+        <view class="weui-cell__hd label">
+          高校名称：
+        </view>
+        <view class="weui-cell__bd content-wrap">
+          <view class="weui-cell weui-cell-2 content" bindtap="linkQueryCollege">
+            <input placeholder="搜索校名" value="{{applyData.college}}" disabled/>
+          </view>
+        </view>
+      </view>
+      <view class="m-select m-select-2 weui-cell weui-cell-2 f-mgt15">
+        <view class="weui-cell__hd label">
+          详细地址
+        </view>
+        <view class="weui-cell__bd content-wrap">
+          <view class="weui-cell weui-cell-2 content">
+            <text class="c-sub"> {{applyData.collegeAddr || ''}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="m-select m-select-1 weui-cell weui-cell-2 f-mgt15">
+        <view class="weui-cell__hd label">
+          学院：
+        </view>
+        <view class="weui-cell__bd content-wrap">
+          <view class="weui-cell weui-cell-2 content">
+            <input placeholder="请输入" maxlength="20" bindinput="academyInput" value="{{applyData.academy}}" />
+          </view>
+        </view>
+      </view>
+      <view class="m-select m-select-1 weui-cell weui-cell-2 f-mgt15">
+        <view class="weui-cell__hd label">
+          专业：
+        </view>
+        <view class="weui-cell__bd content-wrap">
+          <view class="weui-cell weui-cell-2 content">
+            <input placeholder="请输入" value="{{applyData.profession}}" bindinput="professionInput" />
+          </view>
+        </view>
+      </view>
+      <view class="m-select m-select-1 weui-cell weui-cell-2 f-mgt15">
+        <view class="weui-cell__hd label">
+          <view>入学年份：</view>
+        </view>
+        <view class="weui-cell__bd content-wrap">
+          <view class="weui-cell weui-cell-2 content">
+            <view class="weui-cell__bd">
+              <picker mode="selector" range="{{year}}" value="{{yearIndex}}" bindchange="enrollmentYeahPicker">
+                <text>{{year[yearIndex]}}年</text>
+              </picker>
+            </view>
+            <view>
+              <image class="icon-down" src="/images/apply_loan/icon_xiala@2x.png"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="m-select m-select-1 weui-cell weui-cell-2 f-mgt15">
+        <view class="weui-cell__hd label">
+          <view>学历：</view>
+        </view>
+        <view class="weui-cell__bd content-wrap">
+          <view class="weui-cell weui-cell-2 content">
+            <view class="weui-cell__bd">
+              <picker mode="selector" range="{{educationArr}}" range-key="{{'label'}}" value="{{educationIndex}}" bindchange="educationPicker">
+                <block wx:if="{{!applyData.education}}">
+                  请选择攻读学历
+                </block>
+                <block wx:else>{{educationArr[educationIndex].label}}</block>
+              </picker>
+            </view>
+            <view>
+              <image class="icon-down" src="/images/apply_loan/icon_xiala@2x.png"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="m-select m-select-1 weui-cell weui-cell-2 f-mgt15">
+        <view class="weui-cell__hd label">
+          <view>学制：</view>
+        </view>
+        <view class="weui-cell__bd content-wrap">
+          <view class="weui-cell weui-cell-2 content">
+            <view class="weui-cell__bd" bindtap="alertError">
+              <picker disabled="{{schoolingPickerShow}}" mode="selector" range="{{schoolingArr}}" range-key="{{'label'}}" value="{{schoolingIndex}}"
+                bindchange="schoolingPicker">
+                <block wx:if="{{schoolingIndex==null}}">
+                  请选择学制
+                </block>
+                <block wx:else>{{schoolingArr[schoolingIndex].label}}</block>
+              </picker>
+            </view>
+            <view>
+              <image class="icon-down" src="/images/apply_loan/icon_xiala@2x.png"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="m-select m-select-2 weui-cell weui-cell-2 f-mgt15">
+        <view class="weui-cell__hd label">
+          毕业年份
+        </view>
+        <view class="weui-cell__bd content-wrap">
+          <view class="weui-cell weui-cell-2 content">
+            <text class="c-sub">{{applyData.graduationYear || ''}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <!-- 按钮 -->
+  <view class="f-tc" style="margin-top:60rpx;margin-bottom:150rpx;" bindtap="nextStep">
+    <view class="u-btn u-btn-primary">下一步</view>
+  </view>
+</view>

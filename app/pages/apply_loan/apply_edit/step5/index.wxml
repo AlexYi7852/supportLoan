@@ -1,0 +1,52 @@
+<view class="container">
+  <!-- 所需材料 -->
+  <view class="m-require g-mn">
+    <view>
+      <image class="icon-doc f-mgr6" src="/images/apply_loan/icon_suoxucailiao@2x.png"></image>
+      <text>所需材料</text>
+    </view>
+    <view class="f-mgt20">
+      <view style="padding-left:30rpx;">
+        <block wx:for="{{userMaterialDetail.materials}}" wx:for-item="item" wx:key="*this">
+          <view>
+            <text class="f-mgr20">{{index+1}}. {{item.materialName}}</text>
+
+            <image wx:if="{{item.url}}" class="icon-ok" src="/images/apply_loan/icon-has-upload@2x.png"></image>
+
+            <block wx:if="{{item.materialCode=='JHRTYDKZM'}}">
+              <text class="c-secondary" data-index="{{index}}" bindtap='openDocument'>（模板查看或下载）</text>
+            </block>
+          </view>
+        </block>
+      </view>
+      <view class="f-mgt15">
+        <text class="c-danger">*</text>所有材料需直接拍照上传，请开启摄像机权限</view>
+    </view>
+  </view>
+
+  <!-- 材料上传 -->
+  <view class="m-upload g-mn f-mgt10">
+    <view>
+      <image class="icon-camera f-mgr6" src="/images/apply_loan/icon_cailiaoshangchuan@2x.png"></image>
+      <text>材料上传</text>
+    </view>
+
+    <block wx:for="{{userMaterialDetail.materials}}" wx:for-item="item" wx:key="">
+      <view class="item f-mgt20">
+        <view>{{item.materialName}}：</view>
+        <view class="f-mgt10">
+          <view class="upload img-bg">
+            <image mode="aspectFill" class="image result" data-url="{{item.url}}" data-index="{{index}}" data-materialCode="{{item.materialCode}}"  data-fileType="{{item.fileType}}" bindtap="uploadImage"
+              src="{{item.url}}"></image>
+            <image wx:if="{{item.url}}" class="icon-delete" data-index="{{index}}" data-url="{{item.url}}"  bindtap="deleteImage" src="/images/apply_loan/icon_shanchu@2x.png"></image>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 按钮 -->
+  <view class="f-tc" style="margin-top:120rpx;margin-bottom:150rpx;" bindtap="nextStep">
+    <view class="u-btn u-btn-primary">下一步</view>
+  </view>
+</view>

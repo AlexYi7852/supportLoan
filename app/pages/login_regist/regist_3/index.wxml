@@ -1,0 +1,40 @@
+<view class="container g-mn">
+  <view class="m-form f-mgt30">
+    <view class="weui-cell weui-cell-2 f-mgt30">
+      <view class="weui-cell__hd label">
+        密 码
+      </view>
+      <view class="weui-cell__bd content">
+        <input placeholder="请设置登录密码"  focus='ture' type="{{type}}" style="padding-right:60rpx;" value="{{password}}" bindinput="passwordInput"
+        />
+        <view class="g-icon">
+          <image bindtap="togglePassword" style="width:44rpx;height: 32rpx;" src="{{eyeIcon}}" mode="aspectFit"></image>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cell weui-cell-2 f-mgt10">
+      <view class="weui-cell__hd label"></view>
+      <view class="weui-cell__bd">
+        <text class="c-danger">*</text>密码规则：至少6位字符；且必须包含字母、数字两项。
+      </view>
+    </view>
+  </view>
+
+  <view>
+    <view class="f-mgt15">
+      <view class="f-left">
+        <image wx:if="{{!isAgree}}" class="icon-no-select f-mgr10" src="/images/apply_loan/icon_weixuanze@2x.png" bindtap="toggleAgree"></image>
+        <image wx:if="{{isAgree}}" class="icon-select f-mgr10" src="/images/apply_loan/icon_xuanze@2x.png" bindtap="toggleAgree"></image>
+      </view>
+      <view bindtap="linkWeb" class="f-left">
+        <text>同意</text>
+        <text class="c-primary" >《华安助学移动端系统使用协议》</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 按钮 -->
+  <view class="f-tc" style="margin-top:140rpx;">
+    <view class="u-btn u-btn-primary" bindtap="regist">注册</view>
+  </view>
+</view>

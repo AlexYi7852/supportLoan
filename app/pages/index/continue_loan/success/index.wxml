@@ -1,0 +1,11 @@
+<view class="container">
+  <view style="padding:100rpx 60rpx 60rpx;" class="s1 f-tc">
+    <image style="width:240rpx;height:160rpx;" src="/images/reply_confirm/icon_shenhezhong@2x.png"></image>
+    <view style="margin-top:30px;">上传成功，请耐心等待审核</view>
+  </view>
+
+  <!-- 按钮 -->
+  <view class="f-tc" style="margin-top:60rpx;" bindtap="backHome">
+    <view class="u-btn u-btn-primary">完成</view>
+  </view>
+</view>

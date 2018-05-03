@@ -1,0 +1,33 @@
+
+<view class="container">
+  <view class="m-faq" wx:for="{{list}}" wx:key="{{index}}" bindtap="toggleContent" data-index="{{index}}">
+    <view class="header weui-cell">
+      <view class="weui-cell__hd f-mgr10">
+        <view class="u-tag u-tag-1">{{index+1}}</view>
+      </view>
+      <view class="bd weui-cell__bd">
+        {{item.title}}
+      </view>
+    </view>
+    <view class="content g-mn" wx:if="{{item.isShown}}">
+       {{item.content}}
+    </view>
+  </view>
+  <!-- 
+  <view class="m-faq">
+    <view class="header weui-cell">
+      <view class="weui-cell__hd f-mgr10">
+        <view class="u-tag u-tag-1">2</view>
+      </view>
+      <view class="bd weui-cell__bd">
+         我满足申请助学贷的条件吗？
+      </view>
+    </view>
+    <view class="content g-mn">
+      文字内容需后续修改，此处为文字填充。主要有四种贷款形式：国家助学贷款；生源地信用助学贷款；高校利用国家财政资金对学生办理的无息借款；一般性商业助学贷款。其中，国家助学贷款资助力度和规模最大，是助学贷款的主要内容。一般获批金额在6000元/年以内。
+      有村、镇、县开的贫困证明或街道办、区办出具的贫困证明。叫三级证明，主要是用来申请助学贷款的初始依据。三级证明只需在一个贫困证明情况说明书上按管辖层级关系层层盖章而已。很好办的。没有三级证明也，二级证明也可申请助学贷款，去掉的一级一般是镇级或县级，村级或街道办的印章是必须要有的。
+    </view>
+  </view> -->
+
+
+</view>

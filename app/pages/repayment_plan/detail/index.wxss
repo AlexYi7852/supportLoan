@@ -1,0 +1,83 @@
+/* triangle */
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.triangle-l {
+    border-width: 13rpx 22.5rpx 13rpx 0;
+    border-color: transparent #007945 transparent transparent;
+}
+.triangle-r  {
+    border-width: 13rpx 0 13rpx 22.5rpx;
+    border-color: transparent transparent transparent #007945;
+}
+/* square */
+.square{
+    display: inline-block;
+    width: 16rpx;
+    height: 16rpx;
+}
+.square-1{
+    background-color: #1e211f;
+}
+.square-2 {
+    background-color: #12ba74;
+}
+/* 头部 */
+
+.m-header {
+    height: 90rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e7fbf1;
+}
+.m-header .triangle-l{
+    margin-right: 60rpx;
+}
+.m-header .triangle-r {
+    margin-left: 60rpx;
+}
+
+/* table */
+.m-table{
+    background-color: #fff;
+}
+.m-table .header{
+    height: 84rpx;
+    line-height: 84rpx;
+    text-align: center;
+}
+.m-table .header .item{
+    display: inline-block;
+}
+.m-table .content{
+    padding: 40rpx 30rpx;
+}
+.m-table .content .item{
+    border-bottom: 1px solid #e4e9e7;
+    padding: 20rpx 0;
+}
+
+.m-table .content .item:last-child {
+    border-bottom:none;
+}
+.m-table .content .item-key:first-child
+{
+    text-align: left
+}
+.m-table .content .item-key:last-child{
+    text-align: right;
+}
+.m-table .content .item-value{
+    text-align: center;
+}
+.m-table .content .item-value:first-child {
+    text-align: left;
+}
+.m-table .content .item-value:last-child {
+    text-align: right;
+}

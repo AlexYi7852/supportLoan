@@ -1,0 +1,11 @@
+<view class="container f-tc">
+  <image style="margin-top:100rpx;" class="icon-face" src="/images/face_recognize/icon-shibietongguo@2x.png"></image>
+  <!-- <view style="color:#343b36;" class="f-mgt20">人脸识别通过</view> -->
+  <view style="font-size:15px;" class="f-mgt10">您的申请已成功提交</view>
+
+  <view style="margin-top:100rpx;">通过后还需进行回执确认，银行才会放款哦！</view>
+  <!-- 按钮 -->
+  <view class="f-tc" style="margin-top:70rpx;margin-bottom:150rpx;">
+    <view class="u-btn u-btn-primary" bindtap="backHome">返回首页</view>
+  </view>
+</view>

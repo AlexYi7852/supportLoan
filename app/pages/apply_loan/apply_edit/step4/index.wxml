@@ -1,0 +1,163 @@
+<wxs src="../../../../utils/common.wxs" module="util" />
+<!-- 贷款信息 -->
+<view class="m-title  weui-cell weui-cell-2 icon-apply">
+    <view class="weui-cell__bd ">
+        贷款信息
+    </view>
+</view>
+
+<!-- 贷款信息内容 -->
+<view class="m-content g-mn">
+    <view class="m-form m-form-2 f-mgt15">
+        <view class="m-select m-select-1 weui-cell weui-cell-2 f-mgt15">
+            <view class="weui-cell__hd label">
+                <view>每学年贷</view>
+                <view>款金额：</view>
+            </view>
+            <view class="weui-cell__bd content-wrap">
+                <view class="u-counter">
+                    <view data-type="reduce" class="reduce" bindtap="changeAmount" bindlongpress="changeAmountFast" bindtouchend="cancleChangeAmountFast">-</view>
+                    <view class="input-wrap">
+                        <input value="{{loanAmount}}" type="number" disabled />
+                    </view>
+                    <view data-type="add" class="add" bindtap="changeAmount" bindlongpress="changeAmountFast" bindtouchend="cancleChangeAmountFast">+</view>
+                </view>
+            </view>
+        </view>
+        <view class="m-select m-select-1 weui-cell weui-cell-2 f-mgt15">
+            <view class="weui-cell__hd label">
+                <view>申请贷款</view>
+                <view>学年数：</view>
+            </view>
+            <view class="weui-cell__bd content weui-cell weui-cell-2">
+                <view class="weui-cell__bd">
+                    <picker mode="selector" range="{{loanYearArr}}" value="{{loanYear}}" bindchange="loanYearChange">
+                        <block wx:if="{{loanYear==null}}">
+                            <text>请选择贷款期数</text>
+                        </block>
+                        <block wx:else>
+                            <text>{{loanYearArr[loanYear]}} 年</text>
+                        </block>
+                    </picker>
+                </view>
+                <view>
+                    <image class="icon-down" src="/images/apply_loan/icon_xiala@2x.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class="m-select m-select-2 weui-cell weui-cell-2 f-mgt15">
+            <view class="weui-cell__hd label">
+                <view>申请贷款</view>
+                <view>总金额：</view>
+            </view>
+            <view class="weui-cell__bd content-wrap">
+                <view class="weui-cell weui-cell-2 content">
+                    ¥ {{LoanPerAmount}}
+                    <!-- <text class="c-sub">（系统自动带出）</text> -->
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <!-- 银行卡信息 未存在银行卡 -->
+    <block wx:if="{{!BindCardInfo}}">
+        <view class="m-bank f-mgt15">
+            <view class="weui-cell weui-cell-2">
+                <view class="weui-cell__bd">
+                    <image class="icon-info f-mgr10" src="/images/apply_loan/icon_yinhangka@2x.png"></image>
+                    <text>银行卡信息</text>
+                </view>
+            </view>
+            <view class="add-card f-mgt15" bindtap="showAddCardPop">
+                <view>
+                    <image style="width:100rpx;height:74rpx;" mode="aspectFit" src="/images/apply_loan/icon_tianjiayinhnagka@2x.png"></image>
+                    <view>添加银行卡</view>
+                </view>
+            </view>
+            <view class="tip f-mgt10">
+                <text class="c-warn">*</text>需使用{{needCardName}}（储蓄卡）</view>
+            <view class="tip1 f-mgt10">经办银行：{{userMaterialDetail.bankname}}</view>
+        </view>
+    </block>
+    <!-- 银行卡信息 已存在银行卡 -->
+    <block wx:if="{{BindCardInfo}}">
+        <view class="m-bank f-mgt15">
+            <view class="weui-cell weui-cell-2">
+                <view class="weui-cell__bd">
+                    <image class="icon-info f-mgr10" src="/images/apply_loan/icon_yinhangka@2x.png"></image>
+                    <text>银行卡信息</text>
+                </view>
+                <view class="change" bindtap="linkUrl">
+                    <text class="f-mgr6">更改银行卡</text>
+                    <image class="icon-right1" src="/images/apply_loan/iconfont_lanyoujiantou@2x.png"></image>
+                </view>
+            </view>
+            <view class="card weui-cell weui-cell-1 f-mgt15  {{util.icon(BindCardInfo.bankName)}}">
+                <view class="weui-cell__hd f-mgr15 icon-card">
+                    <view class="icon"></view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view>{{BindCardInfo.bankName}}</view>
+                    <view class="sub">储蓄卡 </view>
+                    <view class="weui-cell weui-cell-2 f-mgt10">
+                        <view class="weui-cell__bd">
+                            {{BindCardInfo.cardCode}}
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="tip f-mgt10">
+                <text class="c-warn">*</text>需使用{{needCardName}}（储蓄卡）</view>
+            <view class="tip1 f-mgt10">经办银行：{{userMaterialDetail.bankname}}</view>
+        </view>
+    </block>
+</view>
+
+<!-- 按钮 -->
+<view class="f-tc" style="margin-top:120rpx;margin-bottom:150rpx;" bindtap="nextStep">
+    <view class="u-btn u-btn-primary">下一步</view>
+</view>
+
+
+
+<!-- 添加银行卡弹窗 model -->
+<view class="m-pop" wx:if="{{isAddCardPop}}">
+    <view class="content-wrap">
+        <view class="header">
+            <view class="g-icon-r" bindtap="hideAddCardPop">
+                <image class="icon-close" src="/images/apply_loan/icon_guanbi@2x.png"></image>
+            </view>
+            <text>添加银行卡</text>
+        </view>
+        <view class="content g-mn">
+            <view>银行卡号：</view>
+            <view class="input-wrap">
+                <input placeholder="请输入" type="number" maxlength="25" bindinput='bankCardInput' />
+            </view>
+            <!-- <view class="f-mgt20">预留手机号：</view>
+            <view class="input-wrap">
+                <input placeholder="请输入" type="number" maxlength="11" bindinput='mobileInput' />
+            </view> -->
+            <view class="f-mgt20">开卡证件类型：</view>
+            <view class="input-wrap">
+                <!-- <input placeholder="请选择" disabled /> -->
+                <picker bindchange="bindPickerChange" value="{{type}}" range="{{options}}">
+                    <view class="picker">
+                        请选择: {{options[type]}}
+                    </view>
+                </picker>
+                <view class="input-icon">
+                    <image style="margin-left:-34rpx;" class="icon-down" src="/images/apply_loan/icon_xiala@2x.png"></image>
+                </view>
+            </view>
+            <view class="f-mgt20">
+                <text class="c-danger">*</text>绑定银行卡的开卡人须与申请人一致
+            </view>
+        </view>
+        <!-- 按钮 -->
+        <view class="f-tc" style="margin:70rpx 0 60rpx;" bindtap="addBankCard">
+            <view class="u-btn u-btn-primary">添加</view>
+        </view>
+    </view>
+</view>
+<!-- 添加银行卡弹窗 model end  -->

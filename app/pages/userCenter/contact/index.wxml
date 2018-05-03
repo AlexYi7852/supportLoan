@@ -1,0 +1,20 @@
+<view class="container">
+  <view class="m-badge">
+    <view class="weui-cell weui-cell-2 item">
+      <view class="weui-cell__hd f-mgr10">
+        <image style="width: 48rpx;height: 46rpx;" src="/images/user_center/QQ-lg@2x.png"></image>
+      </view>
+      <view class="bd weui-cell__bd weui-cell__ft_in-access">
+        <view>QQ客服</view>
+      </view>
+    </view>
+    <view class="weui-cell weui-cell-2 item">
+      <view class="weui-cell__hd f-mgr10">
+        <image style="width: 48rpx;height: 46rpx;" src="/images/user_center/icon_fuwurexian@2x.png"></image>
+      </view>
+      <view class="bd weui-cell__bd weui-cell__ft_in-access">
+        <view>客服热线</view>
+      </view>
+    </view>
+  </view>
+</view>

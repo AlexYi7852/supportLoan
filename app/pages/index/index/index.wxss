@@ -1,0 +1,121 @@
+/* 申请 */
+.container{
+  position: relative;
+}
+.m-apply{
+  padding: 0 30rpx;
+  background-color: #fff;
+}
+.m-apply .box-h{
+  height: 104rpx;
+  line-height: 104rpx;
+  font-size: 15px;
+}
+.m-apply .box-b{
+  height: 180rpx;
+  display: flex;
+  align-items: center;
+}
+.m-apply .weui-flex{
+  flex: 1;
+  text-align: center;
+  align-items: center;
+}
+
+/* 公开信息 */
+.m-info{
+  padding: 38rpx 30rpx;
+  background-color: #fff;
+}
+.m-info .desc{
+  color: #989e9a;
+}
+/* 额度 */
+.m-limit{
+  padding: 30rpx;
+  background-color: #e7fbf1;
+  text-align: center;
+}
+.m-limit .limit{
+  color: #1eb867;
+  font-size: 25px;
+}
+
+/* 生源地 校园地 */
+.m-badge .province{
+  display: inline-block;
+  min-width: 138rpx;
+}
+.m-badge .bank{
+  color: #989e9a;
+  margin-left: 10rpx;
+}
+
+/* 新闻公告 */
+.m-announce{
+  background-color: #fff;
+  padding: 60rpx 60rpx 60rpx 30rpx;
+}
+.icon-question{
+ 
+  width: 40rpx;
+  height: 40rpx;
+  float: right;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkRCMzlFQTE1RTYyODExRTc5OEQ2QjlENzZGQ0Q2MTMzIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkRCMzlFQTE2RTYyODExRTc5OEQ2QjlENzZGQ0Q2MTMzIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6REIzOUVBMTNFNjI4MTFFNzk4RDZCOUQ3NkZDRDYxMzMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6REIzOUVBMTRFNjI4MTFFNzk4RDZCOUQ3NkZDRDYxMzMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5rsYrQAAADcElEQVR42sSZbYhMURjHZ26b15Uwu1EWjSIGuwYtHzY27y+7SQlfZNeHQV4XUZIvWj6w3tpMCMUHH6hVbJaVl7y2SJqhVXyRGFkxmbW7rZf/U8+t0zVz7zlnzvCvX3Nuc+e5/3vuuc95zhl/LBbzaao3mAXCYAIYAgYCC3wDCUDBX4CbfPyXQqGQ60XyNIyVgWqwABR6nLuQPzvBdXACXFG5mIrBtWAxmKNxUz1BBfMUNIC9pgwGwEk2Z0KTmCV804/dTrY8glFvtRo0J2oieBSPx6t0Da4BTTzwc6nTMHlK1WAEHPf9O62GyWi6L/xp0sx0cFvxAvdBI/jIx4NAOZivGGcj0s4xN4N9QBvoJRmwnYfCuQzfl/OTGK2SxmDyXiaD18BcBXPjwVuP8+imX4FhknG/gCKYbHeOwVUK5kizBXNkohY8Ac85IRcIN1IMUpJx6aXclK4HH4KpkkEuO1IPBXHOWR84ldhT3BZQJxn/M3qwQOzBsII50j6hfSGNOR/PzQ94FiHVg6Rk/ADe6hrR4HYFc1+F7D8ALHM5Nwgqud0FWhSus8M2SHe4SOGHHUK7SOL8oOMFkFUherHU4sGer/DDwSDK+TLqcW43OC8cj1HMi8upWCjVyPwRxks0l7/ndgkYp3idEkvjR7JaCm4JaahBI0aADA7NgbmV4KJwTFPncI04+WSwn2Fz6xxT32EwRTNWjzyJmlBFNxxV0FVeGmjL4qnIlDYL7f3ZmqMsYAlvWbZ6Bl5yu9hOtFnqOxl8bchgq9CuMBQzaXEFYkLiAuyHoZgxi9epvw0EE021GTJ4yd4FuGMg2GShPcNAPCoumu3HUmsg6FhaRlItJ+woZKOjqAm7xYL1jaPy+N/qD4NJMUmbWGb+otRgIE6UzDnXJAckFkBuovl2BM/tdVka3JNp4V6pm6/ATPCOX7qtPB51tB699ymTwTio0gjayY9XVEIjziGYq/fa+jgLzigGphXYLkeaUZ2HW2Cuxi37i6rmPBRRuADt903jx71C0dzdTKnJ77EFvIHyUY7TyUH03DbV3S1btJEzjwe/af2k8szNnIxBUhOvxnYbKs26uMoeBY7IFKwySvEYGwl2OkorWSW4iA3yNohUzvVn8TdEGS/4w/wW9+XVm58X9ymuamhnq5GXAx3OIF5/Q/wRYACqWMdYXxQJugAAAABJRU5ErkJggg==);
+ background-size: 40rpx 40rpx;
+}
+.loanType{
+  position: fixed;
+  width: 750rpx;
+  height: 100%;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+}
+.loan-content{
+  width: 550rpx;
+  height: 360rpx;
+  margin: 0 auto;
+  background: #FFF;
+  margin-top: 50%;
+  border-radius: 20rpx;
+  box-sizing: border-box;
+  padding: 40rpx;
+  position: relative;
+
+}
+.loan-content-title{
+  text-align: center;
+  line-height: 40rpx;
+  font-size: 36rpx;
+  margin-bottom: 20rpx;
+}
+.loan-content .list{
+  line-height: 50rpx;
+  margin-top: 10rpx;
+  font-size: 28rpx;
+}
+.loan-btn{
+  margin-top: 20px;
+}
+.loan-btn view{
+  float: left;
+  font-size: 32rpx;
+  color:#1eb867;
+  padding: 10px 0;
+  width: 50%;
+  text-align: center
+}
+.borderLeft {
+  border-left:1rpx solid #e3e3e3;
+}
+.close-btn{
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkU2OUI1QURDRTZDMTExRTc5MjQzOTc0MEY1RjkzRkNCIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkU2OUI1QURERTZDMTExRTc5MjQzOTc0MEY1RjkzRkNCIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RTY5QjVBREFFNkMxMTFFNzkyNDM5NzQwRjVGOTNGQ0IiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RTY5QjVBREJFNkMxMTFFNzkyNDM5NzQwRjVGOTNGQ0IiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7IV6eWAAABpUlEQVR42pyVyUoDQRCGZ5ow5Brw4E3wIBgcMYYcxA2fxbdQQcXoQcQn8ElExeWoIuICCoEh6CVKPLgQBMG/pAY6xfRmwTeT6Z6pv/rvJfHa5sZiFEVNkIEF0IsCYnVppe95fasZ43YIRsFuCZc97hsE56ARKiLiBMzy720SuAdVbhhjkTnwFpIVlSe47WvJKTKFywx40BpJ5AqUA5LH/M281twhyxVXSrY8ap1DPJJygC1VkbyO+fkbAcU7mALPYiQkUrEkTlD9sbCly8mf6EGJjjTALpMttTy5FIgC7TLZ0tZfUgWV2ezKw2qLS8Bm1yU4c9miR8kygbldF2CE2ybFOx1T5a4R6HZVuXIZd2DYltxHgOLHcHR8g0/Xxz4Cp2C6oL0GbrAPyv8VSApWSwtcy9UFkUqogGkTjYMJcCs3o2kkKuRsAV/83OBJ7tuMRSLKw5YuJ9dXS483Y+ayS/mcLSK5voRTl13Kw5a2ZSF8uOxSfIj52GL6T7bZNUACBwG2mERMdh0psYl8bDGJFNmVksAyeGH1ekjlFrvo7HoFO78CDAAJmaEFyUWp4wAAAABJRU5ErkJggg==) center no-repeat;
+  background-size: 28rpx 28rpx;
+}

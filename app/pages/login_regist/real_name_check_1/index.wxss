@@ -1,0 +1,29 @@
+/* 上传身份证 */
+
+.m-upload .upload {
+  width: 484rpx;
+  height: 268rpx;
+  margin: 0 auto;
+}
+
+.m-upload .upload image {
+  width: 484rpx;
+  height: 268rpx !important;
+}
+
+/* 身份证信息表单 */
+
+.m-info {
+  background-color: #fff;
+}
+
+.m-info .form .label {
+  width: 180rpx;
+  text-align: justify;
+}
+
+.m-info .form .content {
+  background-color: #f3f6f4;
+  padding: 20rpx 16rpx;
+  text-align: right;
+}

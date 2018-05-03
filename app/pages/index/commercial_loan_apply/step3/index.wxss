@@ -1,0 +1,117 @@
+/* 列表文件 */
+
+.m-list {
+  background-color: #fff;
+}
+
+.m-list .item {
+  color: #4193d2;
+}
+
+/* 签署弹层 */
+
+.m-pop {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(66, 66, 66, 0.6);
+  padding: 30rpx;
+}
+
+.m-pop .content-wrap {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.m-pop .header {
+  position: relative;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  background-color: #07944a;
+  color: #fff;
+}
+
+.m-pop .header .g-icon-l {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 88rpx;
+  text-align: center;
+}
+
+.m-pop .content {
+  background-color: #fff;
+}
+
+.m-pop .content1 {
+  padding: 30rpx;
+  background-color: #ecfaf3;
+  max-height: 600rpx;
+  overflow-y: auto;
+}
+
+/* 手机号验证弹层 */
+
+.m-pop-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60rpx;
+}
+
+.m-pop-1 .header {
+  text-align: center;
+  background-color: transparent;
+  color: #000;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.m-pop-1 .content-wrap {
+  padding: 0 20rpx;
+}
+
+.m-pop-1 .content {
+  padding: 0 30rpx;
+}
+
+.m-pop-1 .u-code {
+  height: 88rpx;
+  line-height: 88rpx;
+}
+
+.m-pop-1 .u-code .input-wrap {
+  height: 100%;
+  background-color: #f3f6f4;
+  padding: 0 20rpx;
+}
+
+.m-pop-1 .u-code .code-wrap {
+  background-color: #07944a;
+  color: #fff;
+}
+
+.m-pop-1 .g-icon-r {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+}
+
+.m-pop-1 .btn-confirm {
+  width: 100%;
+  height: 94rpx;
+  line-height: 94rpx;
+  border-top: 1px solid #ecfaf3;
+  color: #07944a;
+  text-align: center;
+}
+
+.msg-btn {
+  width: 210rpx;
+}

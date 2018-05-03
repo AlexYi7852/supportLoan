@@ -1,0 +1,99 @@
+<view class="container">
+  <!-- 手机验证弹层 -->
+  <view class="m-pop m-pop-1" wx:if="{{isPhonePop}}">
+    <view class="content-wrap">
+      <view class="header">
+        手机验证
+        <view class="g-icon-r">
+          <image class="icon-close" src="/images/apply_loan/icon_guanbi2@2x.png"></image>
+        </view>
+      </view>
+      <view class="content">
+        <view> {{phoneMsg || "点击获取手机验证码"}}</view>
+        <view class="u-code weui-cell weui-cell-2 f-mgt20">
+          <view class="input-wrap">
+            <input placeholder="请输入验证码" value="" bindinput="codeInput" maxlength="6" type="number" />
+          </view>
+          <view class="code-wrap">
+            <view class=" getcode msg-btn {{is_show?'show':'hide'}}" bindtap="getMobileCode">获取验证码</view>
+            <view class="getcode disable-btn msg-btn  {{is_show?'hide':'show'}}">{{last_time}}s</view>
+          </view>
+        </view>
+      </view>
+      <view class="btn-confirm f-mgt30" bindtap="sendApply">
+        确定
+      </view>
+    </view>
+  </view>
+
+
+  <!-- 电子签署告知弹层 -->
+  <view class="m-pop" wx:if="{{isAgreePop}}">
+    <view class="content-wrap">
+      <view class="header">
+        <view class="g-icon-l">
+          <image class="icon-back" src="/images/apply_loan/iconfont_fanhuijiantou@2x.png"></image>
+        </view>
+        <text>电子签署重要事项告知</text>
+      </view>
+      <view class="content">
+        <view class="content1 g-mn3 textindent">
+          <view>您即将通过个人数字证书在线签署相关法律文本，请仔细阅读以下内容：</view>
+          <view>1、您的个人数字证书由中国金融认证中心（简称“CFCA”）旗下安心签平台根据您在华安助学平台提交的个人信息生成。</view>
+          <view>2、所有通过您的账户及个人数字证书在华安助学平台签署的法律文本均视为您真实意愿的表达，华安助学平台有权决定不同类型法律文本签署流程。</view>
+          <view>3、请您务必妥善保管账户、密码、手机验证码等信息，因您的原因导致上述信息被冒用、盗用或非法使用，由此引起的一切风险、责任、损失等由您自行承担。</view>
+          <view>4、您所签署的法律文本正式生效后，您可通过华安助学移动端→我的→我的合同进行查阅。</view>
+        </view>
+      </view>
+      <view class="g-mn3">
+        <view>将要签署的法律文本</view>
+        <view class="f-mgt10">
+
+          <block wx:for="{{userMaterialDetail.pdf}}" wx:for-item="item" wx:key="">
+            <text> 《{{item.name}}》 </text>
+          </block>
+
+        </view>
+        <view class="f-tc f-mgt30 f-mgb15">
+          <view wx:if="{{!enabledClick}}" class="u-btn u-btn-accept1">我已阅读并同意（{{seconds}}s），去签署</view>
+          <view wx:if="{{enabledClick}}" class="u-btn u-btn-accept1 u-btn-accept1-active" bindtap="hidePop">我已阅读并同意，去签署</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="g-mn">请查看以下文本</view>
+  <view class="m-list">
+    <block wx:for="{{userMaterialDetail.pdf}}" wx:for-item="item" wx:key="">
+      <view class="item weui-cell weui-cell-3" data-url="{{item.url}}" bindtap="openDocument">《{{item.name}}》</view>
+    </block>
+  </view>
+  <view class="g-mn">
+    <view class="f-mgt15" bindtap="agreeEvent">
+      <block wx:if="{{!isAgree}}">
+        <image class="icon-no-select f-mgr10" src="/images/apply_loan/icon_weixuanze@2x.png"></image>
+      </block>
+      <block wx:else>
+        <image class="icon-select f-mgr10" src="/images/apply_loan/icon_xuanze@2x.png"></image>
+      </block>
+      <text>我已阅读以上文书</text>
+    </view>
+    <view class="f-mgt30">
+      <view>注意：</view>
+      <view>务必请认真查看文书等等，具体说明文案以后补充！</view>
+    </view>
+  </view>
+
+  <!-- 按钮 -->
+  <view class="g-mn" style="margin-top:270rpx;">
+    <view class="weui-cell weui-cell-2">
+      <view class="weui-cell__bd" bindtap="backHome">
+        <view class="u-btn u-btn-cancle">暂不签署</view>
+      </view>
+      <view class="weui-cell__bd" bindtap="signDocument">
+        <view class="u-btn u-btn-accept">同意签署</view>
+      </view>
+    </view>
+  </view>
+</view>

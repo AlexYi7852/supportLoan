@@ -1,0 +1,12 @@
+<view class="container">
+  <view class="m-textarea g-mn">
+    <view class="content">
+      <textarea bindinput="contentInput" placeholder="请将意见反馈于此..." auto-focus maxlength="300" />
+      <view class="tip c-dark">{{textLength}}/300</view>
+    </view>
+  </view>
+  <!-- 按钮 -->
+  <view class="f-tc" style="margin-top:100rpx;" bindtap="feedback">
+    <view class="u-btn u-btn-primary">提交</view>
+  </view>
+</view>

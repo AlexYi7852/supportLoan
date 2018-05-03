@@ -1,0 +1,18 @@
+/* 续贷申请信息 */
+
+.m-info {
+    border-bottom: 1px solid #e4e9e7;
+    padding-bottom: 40rpx;
+}
+
+.m-info .content {
+    color: #343b36;
+}
+
+.m-info .title {
+    font-size: 20px;
+}
+
+.m-info .subtitle {
+    font-size: 17px;
+}

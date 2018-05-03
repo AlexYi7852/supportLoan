@@ -1,0 +1,122 @@
+<wxs src="../../../utils/common.wxs" module="util" />
+<!-- 若无绑定银行卡 -->
+<block wx:if="{{!list}}">
+  <view class="container g-mn s1">
+    <view class="m-bank">
+      <view class="add-card">
+        <view>
+          <image style="width:100rpx;height:74rpx;" mode="aspectFit" src="/images/apply_loan/icon_tianjiayinhnagka@2x.png"></image>
+          <view>添加银行卡</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</block>
+
+<view class="m-pop" wx:if="{{isAddCardPop}}">
+  <view class="content-wrap">
+    <view class="header">
+      <view class="g-icon-r" bindtap="hideAddCardPop">
+        <image class="icon-close" src="/images/apply_loan/icon_guanbi@2x.png"></image>
+      </view>
+      <text>添加银行卡</text>
+    </view>
+    <view class="content g-mn">
+      <view>银行卡号：</view>
+      <view class="input-wrap">
+        <input placeholder="请输入" type="number" maxlength="25" bindinput='bankCardInput' />
+      </view>
+      <!-- <view class="f-mgt20">预留手机号：</view>
+      <view class="input-wrap">
+        <input placeholder="请输入" type="number" maxlength="11" bindinput='mobileInput' />
+      </view> -->
+      <view class="f-mgt20">开卡证件类型：</view>
+      <view class="input-wrap">
+        <!-- <input placeholder="请选择" disabled /> -->
+        <picker bindchange="bindPickerChange" value="{{type}}" range="{{options}}">
+          <view class="picker">
+            请选择: {{options[type]}}
+          </view>
+        </picker>
+        <view class="input-icon">
+          <image style="margin-left:-34rpx;" class="icon-down" src="/images/apply_loan/icon_xiala@2x.png"></image>
+        </view>
+      </view>
+      <view class="f-mgt20">
+        <text class="c-danger">*</text>绑定银行卡的开卡人须与申请人一致
+      </view>
+    </view>
+    <!-- 按钮 -->
+    <view class="f-tc" style="margin:70rpx 0 60rpx;" bindtap="addBankCard">
+      <view class="u-btn u-btn-primary">添加</view>
+    </view>
+  </view>
+</view>
+
+<!-- 存在绑定银行卡 -->
+
+<view class="container">
+  <block wx:if="{{list}}">
+    <!-- 放款卡 -->
+    <view class="m-bank s1" style="padding:60rpx 30rpx;" wx:for="{{list}}" wx:for-item="item" wx:if="{{item.ifBinding==1}}" wx:key="key1">
+      <view class="card weui-cell weui-cell-1  {{util.icon(item.bankName)}}">
+        <view class="g-icon">
+          <view class="bind-icon"></view>
+          <image style="width:98rpx;height:76rpx;" src="/images/user_center/icon_yibangding@2x.png"></image>
+        </view>
+        <view class="weui-cell__hd f-mgr15 icon-card">
+          <view class="icon"></view>
+        </view>
+        <view class="weui-cell__bd">
+          <view>{{item.bankName}}</view>
+          <view class="sub">储蓄卡</view>
+          <view class="weui-cell weui-cell-2 f-mgt10">
+            <view class="weui-cell__bd">
+              {{item.cardCode}}
+            </view>
+            <!--  <view>
+            <image class="f-mgr10" style="width:44rpx;height: 32rpx;" src="/images/user_center/icon_zhanghaobukejian@2x.png" mode="aspectFit"></image>
+          </view> -->
+          </view>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell-2 f-mgt30">
+        <view class="weui-cell__bd">
+          {{item.tip}}
+        </view>
+        <view class="c-secondary">
+          <navigator url="./bind_bank_card/index?bankName={{item.bankName}}&tip={{item.tip}}">
+            <text class="f-mgr6">更改绑定</text>
+            <image class="icon-right1" src="/images/apply_loan/iconfont_lanyoujiantou@2x.png"></image>
+          </navigator>
+        </view>
+      </view>
+    </view>
+
+    <!-- 已绑定卡 -->
+    <view class="m-bank g-mn f-mgt30">
+      <block wx:for="{{list}}" wx:for-item="item" wx:key="key2">
+        <view class="card card-1 weui-cell weui-cell-1 slidecard  mb-30 {{util.icon(item.bankName)}}" wx:if="{{item.ifBinding==0}}"
+          bindtap="slideDel">
+          <view class="weui-cell__hd f-mgr15">
+            <view class="icon"></view>
+          </view>
+          <view class="weui-cell__bd">
+            <view>{{item.bankName}}</view>
+            <view class="sub">储蓄卡2</view>
+            <view class="weui-cell weui-cell-2 f-mgt10">
+              <view class="weui-cell__bd">
+                {{item.cardCode}}
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+
+    </view>
+  </block>
+  <!-- 按钮 -->
+  <view class="f-tc" style="margin-top:120rpx;">
+    <view class="u-btn u-btn-primary" bindtap="showAddCardPop">添加银行卡</view>
+  </view>
+</view>

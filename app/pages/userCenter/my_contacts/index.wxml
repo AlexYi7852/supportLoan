@@ -1,0 +1,228 @@
+<wxs src="../../../utils/common.wxs" module="util" />
+<view class="container">
+  <!-- 不可编辑状态 -->
+  <block wx:if="{{!isEditable}}">
+    <view class="m-content g-mn">
+      <view>
+        <image class="icon-iccard f-mgr6" src="/images/my_loan/icon_fumujijianhurenxinxi@2x.png"></image>
+        <text>父母/监护人</text>
+      </view>
+      <view class="m-form m-form-1">
+        <view class="m-select m-select-1 weui-cell weui-cell-2 f-mgt15">
+          <view class="weui-cell__hd label">
+            姓名：
+          </view>
+          <view class="weui-cell__bd content-wrap">
+            <view class="weui-cell weui-cell-2 content">
+              {{list.guarderName}}
+              <!-- <input placeholder="请输入" value="" /> -->
+            </view>
+          </view>
+        </view>
+
+        <view class="m-select m-select-1 weui-cell weui-cell-2 f-mgt15">
+          <view class="weui-cell__hd label">
+            身份证：
+          </view>
+          <view class="weui-cell__bd content-wrap">
+            <view class="weui-cell weui-cell-2 content">
+              {{list.guarderCertCode}}
+              <!-- <input placeholder="请输入" value="" /> -->
+            </view>
+          </view>
+        </view>
+
+        <view class="m-select m-select-1 weui-cell weui-cell-2 f-mgt15">
+          <view class="weui-cell__hd label">
+            <view>与申请人</view>
+            <view>关系：</view>
+          </view>
+          <view class="weui-cell__bd content weui-cell weui-cell-2">
+            <view class="weui-cell__bd">{{util.getRelationShip(list.guarderRelation)}}</view>
+            <view>
+              <image class="icon-down" src="/images/apply_loan/icon_xiala@2x.png"></image>
+            </view>
+          </view>
+        </view>
+        <view class="m-select m-select-1 weui-cell weui-cell-2 f-mgt15">
+          <view class="weui-cell__hd label">
+            手机号：
+          </view>
+          <view class="weui-cell__bd content-wrap">
+            <view class="weui-cell weui-cell-2 content">
+              {{list.guarderMobile}}
+              <!-- <input placeholder="请输入" value="" /> -->
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="m-content g-mn f-mgt10">
+      <view>
+        <image class="icon-people f-mgr6" src="/images/my_loan/icon_jinjixianxiren@2x.png"></image>
+        <text>紧急联系人</text>
+      </view>
+      <view class="m-form m-form-1">
+        <view class="m-select m-select-1 weui-cell weui-cell-2 f-mgt15">
+          <view class="weui-cell__hd label">
+            姓名：
+          </view>
+          <view class="weui-cell__bd content-wrap">
+            <view class="weui-cell weui-cell-2 content">
+              {{list.urgentName}}
+              <!-- <input placeholder="请输入" value="" /> -->
+            </view>
+          </view>
+        </view>
+        <view class="m-select m-select-1 weui-cell weui-cell-2 f-mgt15">
+          <view class="weui-cell__hd label">
+            <view>与申请人</view>
+            <view>关系：</view>
+          </view>
+          <view class="weui-cell__bd content weui-cell weui-cell-2">
+            <view class="weui-cell__bd">{{util.getRelationShip(list.urgentRelation)}} </view>
+            <view>
+              <image class="icon-down" src="/images/apply_loan/icon_xiala@2x.png"></image>
+            </view>
+          </view>
+        </view>
+        <view class="m-select m-select-1 weui-cell weui-cell-2 f-mgt15">
+          <view class="weui-cell__hd label">
+            手机号：
+          </view>
+          <view class="weui-cell__bd content-wrap">
+            <view class="weui-cell weui-cell-2 content">
+              {{list.urgentMobile}}
+              <!-- <input placeholder="请输入" value="" /> -->
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <!-- 可编辑状态 -->
+  <block wx:if="{{isEditable}}">
+    <view class="m-content m-content-1 g-mn">
+      <view>
+        <image class="icon-iccard f-mgr6" src="/images/my_loan/icon_fumujijianhurenxinxi@2x.png"></image>
+        <text>父母/亲属</text>
+      </view>
+      <view class="m-form m-form-1">
+        <view class="m-select m-select-1 weui-cell weui-cell-2 f-mgt15">
+          <view class="weui-cell__hd label">
+            姓名：
+          </view>
+          <view class="weui-cell__bd content-wrap">
+            <view class="weui-cell weui-cell-2 content">
+              <input placeholder="请输入" maxlength="6" value="{{list.guarderName}}" bindinput="guarderNameInput" />
+            </view>
+          </view>
+        </view>
+
+        <view class="m-select m-select-1 weui-cell weui-cell-2 f-mgt15">
+          <view class="weui-cell__hd label">
+            身份证：
+          </view>
+          <view class="weui-cell__bd content-wrap">
+            <view class="weui-cell weui-cell-2 content">
+              <input placeholder="请输入" maxlength="18" type="idcard" bindinput="guarderCertCodeInput" value="{{list.guarderCertCode}}" />
+            </view>
+          </view>
+        </view>
+        <view class="m-select m-select-1 weui-cell weui-cell-2 f-mgt15">
+          <view class="weui-cell__hd label">
+            <view>与申请人</view>
+            <view>关系：</view>
+          </view>
+          <view class="weui-cell__bd content weui-cell weui-cell-2">
+            <view class="weui-cell__bd">
+              <picker bindchange="bindGuarderRelation" value="index" range="{{relationshipData1}}" range-key="{{'label'}}">
+                <view class="picker">
+                  {{relationshipData1[index]['label']}}
+                </view>
+              </picker>
+            </view>
+            <view>
+              <image class="icon-down" src="/images/apply_loan/icon_xiala@2x.png"></image>
+            </view>
+          </view>
+        </view>
+        <view class="m-select m-select-1 weui-cell weui-cell-2 f-mgt15">
+          <view class="weui-cell__hd label">
+            手机号：
+          </view>
+          <view class="weui-cell__bd content-wrap">
+            <view class="weui-cell weui-cell-2 content">
+              <input placeholder="请输入" value="{{list.guarderMobile}}" bindinput="guarderMobileInput" type="number" maxlength="11" />
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="m-content m-content-1 g-mn f-mgt10">
+      <view>
+        <image class="icon-people f-mgr6" src="/images/my_loan/icon_jinjixianxiren@2x.png"></image>
+        <text>紧急联系人</text>
+      </view>
+      <view class="m-form m-form-1">
+        <view class="m-select m-select-1 weui-cell weui-cell-2 f-mgt15">
+          <view class="weui-cell__hd label">
+            姓名：
+          </view>
+          <view class="weui-cell__bd content-wrap">
+            <view class="weui-cell weui-cell-2 content">
+              <input placeholder="请输入" bindinput="urgentName" maxlength="6" value="{{list.urgentName}}" />
+            </view>
+          </view>
+        </view>
+        <view class="m-select m-select-1 weui-cell weui-cell-2 f-mgt15">
+          <view class="weui-cell__hd label">
+            <view>与申请人</view>
+            <view>关系：</view>
+          </view>
+          <view class="weui-cell__bd content weui-cell weui-cell-2">
+            <view class="weui-cell__bd">
+              <picker bindchange="urgentRelation" value="index1" range="{{relationshipData2}}" range-key="{{'label'}}">
+                <view class="picker">
+                  {{relationshipData2[index1]['label']}}
+                </view>
+              </picker>
+            </view>
+            <view>
+              <image class="icon-down" src="/images/apply_loan/icon_xiala@2x.png"></image>
+            </view>
+          </view>
+        </view>
+        <view class="m-select m-select-1 weui-cell weui-cell-2 f-mgt15">
+          <view class="weui-cell__hd label">
+            手机号：
+          </view>
+          <view class="weui-cell__bd content-wrap">
+            <view class="weui-cell weui-cell-2 content">
+              <input placeholder="请输入" type="number" maxlength="11" value="{{list.urgentMobile}}" bindinput="urgentMobile" />
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+
+  <!-- 未进入编辑状态按钮 -->
+  <view class="f-tc f-mgt30" wx:if="{{!isEditable}}">
+    <view class="u-btn u-btn-primary" bindtap="enterEditState">编辑</view>
+  </view>
+
+  <!-- 编辑状态按钮 -->
+  <view class="weui-cell weui-cell-2 f-tc f-mgt30" wx:if="{{isEditable}}">
+    <view class="weui-cell__bd">
+      <view class="u-btn u-btn-cancle" bindtap="cancleEditContent">取消</view>
+    </view>
+    <view class="weui-cell__bd">
+      <view class="u-btn u-btn-accept" bindtap="editContactor">保存</view>
+    </view>
+  </view>
+</view>

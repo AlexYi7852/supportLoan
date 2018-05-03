@@ -1,0 +1,9 @@
+.m-info{
+    width: 60%;
+    margin: 0 auto;
+    text-align: left;
+}
+.m-info .weui-cell__hd{
+    width: 280rpx;
+    text-align: right;
+}

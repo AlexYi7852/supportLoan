@@ -1,0 +1,86 @@
+/* 上传身份证 */
+.m-upload .upload{
+    position: relative;
+    width: 484rpx;
+    height: 268rpx;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.m-upload .upload .img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+/* 身份证信息表单 */
+.m-info{
+    background-color: #fff;
+}
+.m-info .form .label{
+    width: 180rpx;
+    text-align: justify;
+}
+.m-info .form .content{
+    background-color: #f3f6f4;
+    padding: 20rpx 16rpx;
+    text-align: right;
+}
+
+/* 省市区picker */
+.m-picker{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+.m-picker .cover{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(66,66,66,.4);
+    display: none;
+}
+.m-picker .picker {
+    position: absolute;
+    text-align: center;
+    background-color: #fff;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    transition: all .3s;
+    transform: translateY(100%);
+}
+
+.m-picker .picker picker-view {
+    width: 100%;
+    height: 200px;
+}
+.m-picker .picker .title{
+    height: 100rpx;
+    line-height: 100rpx;
+}
+.m-picker .picker .btn-confirm{
+    width: 100%;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    color: #fff;
+    background-color: #07944a;
+}
+.m-picker.z-active{
+    z-index: 3;
+}
+.m-picker.z-active .picker{
+    transform: translateY(0)
+}
+.m-picker.z-active .cover {
+    display: block;
+}

@@ -1,0 +1,38 @@
+.m-file {
+  padding: 0 30rpx;
+  background-color: #fff;
+}
+
+.m-file .header {
+  height: 98rpx;
+  line-height: 98rpx;
+  display: flex;
+  align-items: center;
+}
+
+.m-file .header-1 {
+  border-bottom: 1px solid #e4e9e7;
+}
+
+.m-file .header1 {
+  height: 60rpx;
+  line-height: 60rpx;
+  border-bottom: 1px solid #e4e9e7;
+}
+
+.m-file .item {
+  padding: 20rpx 0;
+}
+
+.no-data {
+  text-align: center;
+  line-height: 200px;
+  font-size: 36rpx;
+  color: red;
+}
+.text-tip view {
+  color: red;
+  text-align: center;
+  line-height: 28px;
+  font-size: 32rpx;
+}

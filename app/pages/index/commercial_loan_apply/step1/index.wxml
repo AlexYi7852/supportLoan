@@ -1,0 +1,9 @@
+<view class="container">
+  <image style="width:100%;" mode="widthFix" src="/images/commercial_loan_apply/commercial_loan_apply.jpg"></image>
+
+
+  <!-- 按钮 -->
+  <view class="f-tc" style="margin-top:80rpx;" bindtap="nexStep">
+    <view class="u-btn u-btn-primary">立即申请</view>
+  </view>
+</view>

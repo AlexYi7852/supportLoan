@@ -1,0 +1,18 @@
+.m-header{
+    background-color: #fff;
+}
+.m-header .title{
+    font-size: 17px;
+}
+.m-header .time{
+    color: #535a55;
+    font-size: 13px;
+    margin-left: 20rpx;
+}
+
+.m-article .paragraph{
+    text-indent: 2em;
+}
+.m-article .paragraph:nth-child(n+2){
+    margin-top: 40rpx;
+}

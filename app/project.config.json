@@ -1,0 +1,504 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.0.0",
+	"appid": "wxce7409f810704739",
+	"projectname": "zhuxuedai",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "announcedetail",
+					"pathName": "pages/index/announce_detail/index",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "apply_step7",
+					"pathName": "pages/apply_loan/apply_step7/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "choose_card",
+					"pathName": "pages/apply_loan/choose_card/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "face_recognize",
+					"pathName": "pages/apply_loan/face_recognize/index",
+					"query": ""
+				},
+				{
+					"id": 4,
+					"name": "reply_confirm_1",
+					"pathName": "pages/index/reply_confirm_1/index",
+					"query": ""
+				},
+				{
+					"id": 5,
+					"name": "continue_loan_3",
+					"pathName": "pages/index/continue_loan_3/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "my_loan",
+					"pathName": "pages/my_loan/index/index",
+					"query": ""
+				},
+				{
+					"id": 7,
+					"name": "repayment_confirm_1",
+					"pathName": "pages/my_loan/repayment_confirm_1/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "FAQ",
+					"pathName": "pages/index/FAQ/index",
+					"query": ""
+				},
+				{
+					"id": 9,
+					"name": "extension_apply_4",
+					"pathName": "pages/my_loan/extension_apply_4/index",
+					"query": ""
+				},
+				{
+					"id": 10,
+					"name": "advance_pay_3",
+					"pathName": "pages/my_loan/advance_pay_3/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "repayment_plan",
+					"pathName": "pages/repayment_plan/index/index",
+					"query": ""
+				},
+				{
+					"id": 12,
+					"name": "temporary_gate",
+					"pathName": "pages/temporary_gate/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "年度还款详情",
+					"pathName": "pages/repayment_plan/detail/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/userCenter/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "用户详情",
+					"pathName": "pages/userCenter/personal_info/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "设置",
+					"pathName": "pages/userCenter/settings/index",
+					"query": ""
+				},
+				{
+					"id": 17,
+					"name": "修改密码",
+					"pathName": "pages/userCenter/change_password_2/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "feedback",
+					"pathName": "pages/userCenter/feedback/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "关于我们",
+					"pathName": "pages/userCenter/about_us/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "联系客服",
+					"pathName": "pages/userCenter/contact/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的银行卡",
+					"pathName": "pages/userCenter/my_bank_card/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "更改绑定银行卡",
+					"pathName": "pages/userCenter/change_bind_card/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的联系人",
+					"pathName": "pages/userCenter/my_contacts/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "合同文本",
+					"pathName": "pages/userCenter/contract_text/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "登录",
+					"pathName": "pages/login_regist/login/index",
+					"query": ""
+				},
+				{
+					"id": 26,
+					"name": "忘记密码",
+					"pathName": "pages/login_regist/forget_password_1/index",
+					"query": ""
+				},
+				{
+					"id": 27,
+					"name": "注册",
+					"pathName": "pages/login_regist/regist_1/index",
+					"query": ""
+				},
+				{
+					"id": 28,
+					"name": "实名认证",
+					"pathName": "pages/login_regist/real_name_check_2/index",
+					"query": ""
+				},
+				{
+					"id": 29,
+					"name": "商业助学贷款",
+					"pathName": "pages/index/commercial_loan_apply_4/index",
+					"query": ""
+				},
+				{
+					"id": 30,
+					"name": "信息补录",
+					"pathName": "pages/my_loan/info_collection_3/index",
+					"query": ""
+				},
+				{
+					"id": 31,
+					"name": "贷款信息",
+					"pathName": "pages/apply_loan/apply/step4/index",
+					"query": "loanType=S"
+				},
+				{
+					"id": 32,
+					"name": "高校信息",
+					"pathName": "pages/apply_loan/apply/step3/index",
+					"query": "loanType=S"
+				},
+				{
+					"id": 33,
+					"name": "贷款资料",
+					"pathName": "pages/apply_loan/apply/step5/index",
+					"query": "loanType=S"
+				},
+				{
+					"id": 34,
+					"name": "电子签署",
+					"pathName": "pages/apply_loan/apply/step6/index",
+					"query": ""
+				},
+				{
+					"id": 35,
+					"name": "贷款申请",
+					"pathName": "pages/apply_loan/apply_step3/apply_step3_1/index",
+					"query": ""
+				},
+				{
+					"id": 36,
+					"name": "贷款申请4",
+					"pathName": "pages/apply_loan/apply_edit/step4/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "实名认证1",
+					"pathName": "pages/login_regist/real_name_check_1/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的贷款",
+					"pathName": "pages/index/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "申请成功",
+					"pathName": "pages/apply_loan/apply_step7/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "用户协议",
+					"pathName": "pages/protocol/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "信息修改申请",
+					"pathName": "pages/apply_loan/apply_edit/step5/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "申请成功",
+					"pathName": "pages/apply_loan/apply_step7/index",
+					"query": ""
+				},
+				{
+					"id": 43,
+					"name": "信息补录-材料2",
+					"pathName": "pages/my_loan/info_collection_2/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "提前还款",
+					"pathName": "pages/my_loan/advance_pay_1/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "电子签署-修改签署",
+					"pathName": "pages/apply_loan/apply_edit/step6/index",
+					"query": ""
+				},
+				{
+					"id": 46,
+					"name": "高校回执确认",
+					"pathName": "pages/index/reply_confirm/college_reply/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "回执成功",
+					"pathName": "pages/index/reply_confirm/success/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "身份证回执上传",
+					"pathName": "pages/index/reply_confirm/idcard_reply/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的贷款",
+					"pathName": "pages/my_loan/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "还款确认1",
+					"pathName": "pages/my_loan/repayment_confirm/step1/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "还款确认-成功",
+					"pathName": "pages/my_loan/repayment_confirm/step5_success/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "展期申请1",
+					"pathName": "pages/my_loan/extension_apply/step1/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "展期二",
+					"pathName": "pages/my_loan/extension_apply/step2/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "展期3",
+					"pathName": "pages/my_loan/extension_apply/step3/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "展期成功",
+					"pathName": "pages/my_loan/extension_apply/step4",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "展期成功",
+					"pathName": "pages/my_loan/extension_apply/step4/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "贷款更改银行卡",
+					"pathName": "pages/common/change_bank_card/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "申请第二步-联系人信息",
+					"pathName": "pages/apply_loan/apply_step3/apply_step3_2/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "续贷申请",
+					"pathName": "pages/index/continue_loan/step1/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "电子签署",
+					"pathName": "pages/apply_loan/apply/step6/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "修改申请1",
+					"pathName": "pages/apply_loan/apply_edit/step1/index",
+					"query": ""
+				},
+				{
+					"id": 62,
+					"name": "商业助学贷",
+					"pathName": "pages/index/commercial_loan_apply/step3/index",
+					"query": ""
+				},
+				{
+					"id": 63,
+					"name": "加上平台已经注册",
+					"pathName": "pages/index/commercial_loan_apply/step4_success/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的银行卡",
+					"pathName": "pages/userCenter/my_bank_card/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的合同文本",
+					"pathName": "pages/userCenter/contract_text/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "申请第二步",
+					"pathName": "pages/apply_loan/apply/step2/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "贷款申请1",
+					"pathName": "pages/apply_loan/apply/step1/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "注册",
+					"pathName": "pages/login_regist/regist_1/index",
+					"query": "loanType=S"
+				},
+				{
+					"id": -1,
+					"name": "贷款修改",
+					"pathName": "pages/apply_loan/apply_edit/step1/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "贷款修改-高校信息",
+					"pathName": "pages/apply_loan/apply_edit/step3/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "注册设置密码",
+					"pathName": "pages/login_regist/regist_3/index",
+					"query": "loanType=S"
+				},
+				{
+					"id": 72,
+					"name": "续贷申请2",
+					"pathName": "pages/index/continue_loan/step2/index",
+					"query": "loanType=S"
+				},
+				{
+					"id": -1,
+					"name": "贷款申请3",
+					"pathName": "pages/index/continue_loan/step3/index",
+					"query": "loanType=S"
+				},
+				{
+					"id": -1,
+					"name": "shangye dai",
+					"pathName": "pages/index/commercial_loan_apply/step2/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的银行卡",
+					"pathName": "pages/userCenter/my_bank_card/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "展期申请",
+					"pathName": "pages/my_loan/extension_apply/step2/index",
+					"query": "loanType=S"
+				},
+				{
+					"id": -1,
+					"name": "还款确认",
+					"pathName": "pages/my_loan/repayment_confirm/step3/index",
+					"query": ""
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,36 @@
+<view class="container f-tc">
+
+  <!-- IF 成功提交申请 -->
+  <view class="f-mgt30">
+    <view>您已成功提交商业助学贷款申请！</view>
+    <view>请下载加上助学APP查看申请进度。</view>
+    <!-- <view class="m-info weui-cell weui-cell-2 f-mgt20">
+      <view class="weui-cell__hd">
+        您的加上助学账号为：
+      </view>
+      <view class="weui-cell__bd">
+        xxxxxx
+      </view>
+    </view>
+    <view class="m-info weui-cell weui-cell-2">
+      <view class="weui-cell__hd">
+        初始密码：
+      </view>
+      <view class="weui-cell__bd">
+        xxxxxx
+      </view>
+    </view> -->
+  </view>
+
+  <view class="f-mgt20">
+    <image style="width:382rpx;" mode="widthFix" src="/images/commercial_loan_apply/qrcode@2x.png"></image>
+  </view>
+
+  <!-- IF 已经属于平台用户 -->
+  <view>
+    <view class="f-tc" style="margin-top:80rpx;" bindtap="backHome">
+      <view class="u-btn u-btn-primary">确定</view>
+    </view>
+  </view>
+
+</view>

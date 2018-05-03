@@ -1,0 +1,27 @@
+<view class="container g-mn">
+  <view class="m-form f-mgt20">
+    <view>已向账户手机<text class="c-primary">{{mobile}}</text>发送验证码，请注意查收！</view>
+    <view class="weui-cell weui-cell-2 f-mgt30">
+      <view class="weui-cell__hd label">
+        验 证 码
+      </view>
+      <view class="weui-cell__bd content content-1">
+        <input style="padding-right:240rpx" class="input-code" bindinput="codeInput" placeholder="请输入验证码" />
+        <!-- <view class="g-btn">获取验证码</view> -->
+        <view  class=" g-btn msg-btn {{is_show?'show':'hide'}}" bindtap="getMsgCode">获取验证码</view>
+        <view class="g-btn disable-btn  msg-btn  {{is_show?'hide':'show'}}">{{last_time}}s</view>
+      </view>
+    </view>
+    <view class="weui-cell weui-cell-2" bindtap="linkFaceId">
+      <view class="weui-cell__hd label"></view>
+      <view class="weui-cell__bd f-mgt10 c-secondary">
+        无法使用该手机号？
+      </view>
+    </view>
+  </view>
+
+  <!-- 按钮 -->
+  <view class="f-tc" style="margin-top:140rpx;" bindtap="checkMobileCode">
+    <view class="u-btn u-btn-primary">下一步</view>
+  </view>
+</view>

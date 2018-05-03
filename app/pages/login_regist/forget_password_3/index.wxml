@@ -1,0 +1,26 @@
+<view class="container g-mn">
+  <view class="m-form f-mgt30">
+    <view class="weui-cell weui-cell-2 f-mgt30">
+      <view class="weui-cell__hd label">
+        新 密 码
+      </view>
+      <view class="weui-cell__bd content">
+        <input placeholder="请设置新密码" type="password" style="padding-right:60rpx;" bindinput="passwordInput" />
+        <!-- <view class="g-icon">
+          <image bindtap="togglePassword" style="width:44rpx;height: 32rpx;" src="{{eyeIcon}}" mode="aspectFit"></image>
+        </view> -->
+      </view>
+    </view>
+    <view class="weui-cell weui-cell-2 f-mgt10">
+      <view class="weui-cell__hd label"></view>
+      <view class="weui-cell__bd">
+        <text class="c-danger">*</text>密码规则：至少6位字符；且必须包含字母、数字、下划线中的至少两项。
+      </view>
+    </view>
+  </view>
+
+  <!-- 按钮 -->
+  <view class="f-tc" style="margin-top:140rpx;" bindtap="forgotPassword">
+    <view class="u-btn u-btn-primary">完成</view>
+  </view>
+</view>

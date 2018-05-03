@@ -1,0 +1,11 @@
+var filter = function(data, key) {
+  if (data) {
+    return data.split('#')[key] || ' '
+  } else {
+    return ' '
+  }
+}
+
+module.exports = {
+  filter: filter
+}

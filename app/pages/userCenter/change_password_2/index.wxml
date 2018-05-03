@@ -1,0 +1,27 @@
+<view class="container g-mn">
+  <view class="f-tc f-mgt50" style="font-size: 20px;">请设置新密码</view>
+  <view class="m-form f-mgt40">
+    <view class="weui-cell weui-cell-2">
+      <view class="weui-cell__hd label">
+        新密码
+      </view>
+      <view class="weui-cell__bd content">
+        <input placeholder="请设置新密码" type="{{type}}" bindinput="passwordInput" maxlength="30" />
+        <view class="g-icon">
+          <image bindtap="togglePassword" style="width:50rpx;height:30rpx;" src="{{eyeIcon}}"></image>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cell weui-cell-2 f-mgt10">
+      <view class="weui-cell__hd label"></view>
+      <view class="weui-cell__bd weui-cell weui-cell-1">
+        <view class="c-danger f-mgr6">*</view>
+        <view class="weui-cell__bd">密码规则：至少六位字符；且必须包含字母、数字两项。</view>
+      </view>
+    </view>
+  </view>
+  <!-- 按钮 -->
+  <view class="f-tc" style="margin-top:270rpx;" bindtap="changePassword">
+    <view class="u-btn u-btn-primary">下一步</view>
+  </view>
+</view>

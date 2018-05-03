@@ -1,0 +1,58 @@
+<view class="container">
+  <view class="m-badge">
+    <view class="weui-cell weui-cell-2 weui-cell_access item">
+      <view class="weui-cell__hd f-mgr10">
+        <image style="width: 32rpx;height: 36rpx;" src="/images/user_center/icon_xiugaimima@2x.png"></image>
+      </view>
+      <view class="bd weui-cell__bd weui-cell weui-cell-2">
+
+        <view class="weui-cell__bd">
+          <navigator url="../change_password_1/index">
+          修改密码
+          </navigator>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </view>
+    </view>
+    <view class="weui-cell weui-cell-2 weui-cell_access item" bindtap="changePhone">
+      <view class="weui-cell__hd f-mgr10">
+        <image style="width: 24rpx;height: 26rpx;" src="/images/user_center/icon_xiugaishouji@2x.png"></image>
+      </view>
+      <view class="bd weui-cell__bd weui-cell weui-cell-2">
+        <view class="weui-cell__bd">
+          修改绑定手机号
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access">{{userInfo.mobile}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="m-badge f-mgt10">
+    <view class="weui-cell weui-cell-2 weui-cell_access item" bindtap="feedBackEvent">
+      <view class="weui-cell__hd f-mgr10">
+        <image style="width: 36rpx;height: 36rpx;" src="/images/user_center/icon_yijianfankui@2x.png"></image>
+      </view>
+      <view class="bd weui-cell__bd weui-cell weui-cell-2">
+        <view class="weui-cell__bd">
+          意见反馈
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </view>
+    </view>
+
+     <view class="weui-cell weui-cell-2 weui-cell_access item" bindtap="linkWeb">
+      <view class="weui-cell__hd f-mgr10">
+        <image style="width: 36rpx;height: 36rpx;" src="/images/user_center/icon-yonghuxieyi@2x.png"></image>
+      </view>
+      <view class="bd weui-cell__bd weui-cell weui-cell-2">
+        <view class="weui-cell__bd">
+          用户协议
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </view>
+    </view>
+  </view>
+  <view class="f-tc" style="margin-top:140rpx;" bindtap="loginOut">
+    <view class="u-btn u-btn-primary">退出登录</view>
+  </view>
+</view>

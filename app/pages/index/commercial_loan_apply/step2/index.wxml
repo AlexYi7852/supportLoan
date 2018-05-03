@@ -1,0 +1,86 @@
+<view class="container">
+  <view class="g-mn s1">
+    <view>
+      <image class="f-mgr6" style="width:34rpx;height:32rpx;" src="/images/commercial_loan_apply/icon_daikuanxinxi@2x.png"></image>
+      <text>申请金额</text>
+    </view>
+    <view class="f-mgt10">
+      <view>
+        <text class="c-danger">*</text>学费、住宿费将由银行直接发放至您就读高校，请按 国家助学贷款与您实际学费、住宿费差额准确填写申请 金额。
+      </view>
+      <view>学费、住宿费上限{{sysInfo.businessDormAmount || '0'}}元，生活费上限{{sysInfo.businessLifeAmount || '0'}}元</view>
+    </view>
+
+    <view class="m-form f-mgt20">
+      <view class="item weui-cell weui-cell-2">
+        <view class="weui-cell__hd f-mgr20">
+          <view>学 费</view>
+          <view>住宿费：</view>
+        </view>
+        <view class="weui-cell__bd">
+          <view class="u-counter">
+            <view data-type="reduce1" class="reduce" bindtap="changeAmount" bindlongpress="changeAmountFast" bindtouchend="cancleChangeAmountFast">-</view>
+            <view class="input-wrap">
+              <input value="{{price1}}" disabled type="number" />
+            </view>
+            <view data-type="add1" class="add" bindtap="changeAmount" bindlongpress="changeAmountFast" bindtouchend="cancleChangeAmountFast">+</view>
+          </view>
+        </view>
+      </view>
+      <view class="item weui-cell weui-cell-2">
+        <view class="weui-cell__hd f-mgr20">
+          <view>生活费：</view>
+        </view>
+        <view class="weui-cell__bd">
+          <view class="u-counter">
+            <view data-type="reduce2" class="reduce" bindtap="changeAmount" bindlongpress="changeAmountFast" bindtouchend="cancleChangeAmountFast">-</view>
+            <view class="input-wrap">
+              <input value="{{price2}}" disabled type="number" />
+            </view>
+            <view data-type="add2" class="add" bindtap="changeAmount" bindlongpress="changeAmountFast" bindtouchend="cancleChangeAmountFast">+</view>
+          </view>
+        </view>
+      </view>
+      <view class="item weui-cell weui-cell-2">
+        <view class="weui-cell__hd f-mgr20">
+          <view>保险费</view>
+        </view>
+        <view class="weui-cell__bd">
+          <text class="f-mgr6">¥{{feeData.coverFee}}</text>
+          <text class="c-dark">系统自动带出</text>
+        </view>
+        <view bindtap="msgTips">
+          <image style="width:32rpx;height:32rpx;" src="/images/commercial_loan_apply/icon-wenti2@2x.png"></image>
+        </view>
+      </view>
+      <view class="item weui-cell weui-cell-2">
+        <view class="weui-cell__hd f-mgr20">
+          <view>服务费</view>
+        </view>
+        <view class="weui-cell__bd">
+          <text class="f-mgr6">¥{{feeData.platFee}}</text>
+          <text class="c-dark">系统自动带出</text>
+        </view>
+      </view>
+      <view class="item weui-cell weui-cell-2">
+        <view class="weui-cell__hd f-mgr20">
+          <view>贷 款</view>
+          <view>申请总额：</view>
+        </view>
+        <view class="weui-cell__bd">
+          <text class="f-mgr6">¥{{total}}</text>
+          <text class="c-dark">系统自动带出</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="weui-cell weui-cell-2 f-tc f-mgt30">
+    <view class="weui-cell__bd">
+      <view class="u-btn u-btn-cancle" bindtap="backHome">取消</view>
+    </view>
+    <view class="weui-cell__bd">
+      <view class="u-btn u-btn-accept" bindtap="nextStep">确认申请</view>
+    </view>
+  </view>
+</view>

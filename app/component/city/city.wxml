@@ -1,0 +1,31 @@
+<view class='_cityselect'>
+  <view class="weui-cell__bd" bindtap="openMenu">
+    <block wx:if="{{!provName}}">
+      请选择省市区地址
+    </block>
+    {{provName}} {{cityName}} {{areaName}}
+  </view>
+  <!-- 高校地址省市区布局选择 start -->
+  <view class="city-wrap" wx:if="{{addressMenuIsShow}}">
+    <view class="title" style="text-align:center;">请选择省市区地址
+      <view class="f-right city-confirm-btn" bindtap="closeMenu">确定</view>
+    </view>
+    <picker-view style="width: 100%; height: 300px;" bindchange="addressChange" value="{{value}}" wx:key="">
+      <picker-view-column>
+        <view wx:for="{{proJson}}" class="picker-item" wx:key="k1">
+          {{item.label}}
+        </view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{cityJson}}" class="picker-item" wx:key="k2">
+          {{item.label || "-"}}
+        </view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{countyJson}}" class="picker-item" wx:key="k3">
+          {{item.label || "-"}}
+        </view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</view>

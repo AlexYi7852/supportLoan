@@ -1,0 +1,45 @@
+<view class="container">
+  <view class="m-content">
+    <view class="f-mgb20">请确认需要修改的申请信息</view>
+
+    <view>
+      <view class="m-info">
+        <view>原信息：</view>
+        <view class="content content-1 f-mgt10">
+          <block wx:for="{{userMaterialDetail.data}}" wx:for-item="item" wx:key="">
+            <view class="weui-cell weui-cell-4 item">
+              <view class="weui-cell__bd">
+                {{item.label}}
+              </view>
+              <view>
+                {{item.oldValue}}
+              </view>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+    <view class="f-mgt20">
+      <view class="m-info">
+        <view>修改为：</view>
+        <view class="content f-mgt10">
+          <block wx:for="{{userMaterialDetail.data}}" wx:for-item="item" wx:key="">
+            <view class="weui-cell weui-cell-4 item">
+              <view class="weui-cell__bd">
+                {{item.label}}
+              </view>
+              <view>
+                {{item.newValue}}
+              </view>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 按钮 -->
+  <view class="f-tc" style="margin-top:60rpx;" bindtap="nextStep">
+    <view class="u-btn u-btn-primary">确认</view>
+  </view>
+</view>
